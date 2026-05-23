@@ -1527,11 +1527,241 @@
       transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
+    /* ====== Responsive Navbar Base & RWD Styles ====== */
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 20px;
+      height: 14px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 190;
+    }
+    .hamburger span {
+      width: 100%;
+      height: 2px;
+      background-color: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+      transform-origin: left center;
+    }
+    /* Animation when active */
+    .hamburger.is-active span:nth-child(1) {
+      transform: rotate(45deg) translate(1px, -1px);
+    }
+    .hamburger.is-active span:nth-child(2) {
+      width: 0%;
+      opacity: 0;
+    }
+    .hamburger.is-active span:nth-child(3) {
+      transform: rotate(-45deg) translate(1px, 1px);
+    }
+
+    @media (max-width: 1120px) {
+      .hero__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .timeline-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .management-split {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .finance-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .org-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .management-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .news-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .cursor-glow {
+        display: none !important;
+      }
+      .modal-body {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        gap: 20px;
+      }
+      .modal-sidebar {
+        border-left: none;
+        padding-left: 0;
+        margin-top: 20px;
+        border-top: 1px solid var(--line);
+        padding-top: 20px;
+      }
+      .vmv-layout {
+        grid-template-columns: 1fr;
+      }
+      
+      /* Mobile Collapsible Navigation Menu */
+      .hamburger {
+        display: flex;
+        margin-left: auto;
+      }
+      .nav__inner {
+        width: 100%;
+        justify-content: space-between;
+        border-radius: 24px;
+        padding: 10px 18px;
+        overflow-x: visible;
+        position: relative;
+      }
+      .nav__brand {
+        border-right: none;
+      }
+      .nav__links {
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+        right: 0;
+        background: var(--bg-elevated);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: var(--shadow);
+        padding: 16px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        pointer-events: none;
+        transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+        z-index: 185;
+      }
+      .nav__links.menu-open {
+        max-height: 80vh;
+        opacity: 1;
+        overflow-y: auto;
+        pointer-events: auto;
+      }
+      .nav__link {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        border-radius: 12px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .product-grid,
+      .org-grid,
+      .management-grid,
+      .news-grid,
+      .source-list,
+      .finance-summary {
+        grid-template-columns: 1fr;
+      }
+      
+      /* Mobile Timeline Swipe-bar */
+      .timeline-nav {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        gap: 8px;
+        padding: 12px;
+        width: 100%;
+        align-content: stretch;
+        scrollbar-width: none; /* Hide scrollbar for clean visual */
+      }
+      .timeline-nav::-webkit-scrollbar {
+        display: none;
+      }
+      .timeline-item {
+        width: auto;
+        text-align: center;
+        padding: 10px 16px;
+        flex-shrink: 0;
+      }
+      .timeline-item:hover,
+      .timeline-item.is-active {
+        transform: translateY(-2px);
+      }
+      .timeline-item small {
+        margin-bottom: 2px;
+      }
+    }
+
     @media (max-width: 600px) {
       #voice-player {
         width: calc(100vw - 32px);
         bottom: 16px;
-        right: 16px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        max-width: 420px;
+        border-radius: var(--radius-lg);
+      }
+      #voice-player.is-minimized {
+        transform: translate(-50%, calc(100% + 40px));
+      }
+      .voice-player__controls {
+        gap: 12px;
+      }
+      .voice-player__btn {
+        width: 44px;
+        height: 44px;
+        font-size: 16px;
+      }
+      .voice-player__btn--play {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --content-width: calc(100vw - 32px);
+      }
+      .section {
+        padding: 48px 0;
+      }
+      .panel,
+      .timeline-stage,
+      .management-detail,
+      .finance-chart,
+      .finance-panel,
+      .modal-body {
+        padding: 20px;
+      }
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      /* Hide brand on extremely tiny screens inside dropdown menu if visible */
+      .nav__brand {
+        font-size: 11px;
+        letter-spacing: 0.1em;
       }
     }
   </style>
@@ -1547,16 +1777,23 @@
     <header class="nav">
       <div class="nav__inner">
         <a href="#hero" id="nav-brand" class="nav__brand" data-zh="台塑 SMMC TP3" data-en="FORMOSA SMMC TP3">台塑 SMMC TP3</a>
-        <a href="#hero" class="nav__link is-active" data-zh="首頁" data-en="Home">首頁</a>
-        <a href="#news" class="nav__link" data-zh="最新動態" data-en="News">最新動態</a>
-        <a href="#history" class="nav__link" data-zh="擴張歷史" data-en="Expansion">擴張歷史</a>
-        <a href="#products" class="nav__link" data-zh="垂直整合" data-en="Vertical">垂直整合</a>
-        <a href="#organization" class="nav__link" data-zh="水平分工" data-en="Horizontal">水平分工</a>
-        <a href="#management" class="nav__link" data-zh="專題分工" data-en="Team">專題分工</a>
-        <a href="#finance" class="nav__link" data-zh="挑戰與建議" data-en="Finance">挑戰與建議</a>
-        <button id="theme-toggle" class="nav__link" aria-label="Toggle Theme">🌓</button>
-        <button id="lang-toggle" class="nav__link" aria-label="Toggle Language">EN</button>
-        <button id="voice-player-toggle" class="nav__link" aria-label="Toggle Audio Guide" title="Voice Guide">🔊</button>
+        <button class="hamburger" id="nav-hamburger" aria-label="Toggle Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav__links" id="nav-links-menu">
+          <a href="#hero" class="nav__link is-active" data-zh="首頁" data-en="Home">首頁</a>
+          <a href="#news" class="nav__link" data-zh="最新動態" data-en="News">最新動態</a>
+          <a href="#history" class="nav__link" data-zh="擴張歷史" data-en="Expansion">擴張歷史</a>
+          <a href="#products" class="nav__link" data-zh="垂直整合" data-en="Vertical">垂直整合</a>
+          <a href="#organization" class="nav__link" data-zh="水平分工" data-en="Horizontal">水平分工</a>
+          <a href="#management" class="nav__link" data-zh="專題分工" data-en="Team">專題分工</a>
+          <a href="#finance" class="nav__link" data-zh="挑戰與建議" data-en="Finance">挑戰與建議</a>
+          <button id="theme-toggle" class="nav__link" aria-label="Toggle Theme">🌓</button>
+          <button id="lang-toggle" class="nav__link" aria-label="Toggle Language">EN</button>
+          <button id="voice-player-toggle" class="nav__link" aria-label="Toggle Audio Guide" title="Voice Guide">🔊</button>
+        </div>
       </div>
     </header>
 
@@ -1864,6 +2101,38 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const htmlEl = document.documentElement;
+
+      // --- Mobile Navigation Menu Hamburger Toggle ---
+      const navHamburger = document.getElementById('nav-hamburger');
+      const navLinksMenu = document.getElementById('nav-links-menu');
+
+      if (navHamburger && navLinksMenu) {
+        navHamburger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = navLinksMenu.classList.toggle('menu-open');
+          navHamburger.classList.toggle('is-active', isOpen);
+          navHamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        // Close on link clicks
+        const navLinks = navLinksMenu.querySelectorAll('.nav__link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            navLinksMenu.classList.remove('menu-open');
+            navHamburger.classList.remove('is-active');
+            navHamburger.setAttribute('aria-expanded', 'false');
+          });
+        });
+
+        // Close on clicking outside
+        document.addEventListener('click', (e) => {
+          if (!navLinksMenu.contains(e.target) && !navHamburger.contains(e.target)) {
+            navLinksMenu.classList.remove('menu-open');
+            navHamburger.classList.remove('is-active');
+            navHamburger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
 
       // --- Mouse Cursor Glow Effect ---
       const cursorGlow = document.createElement('div');
