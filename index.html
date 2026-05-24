@@ -1843,7 +1843,7 @@
         const mode = EXP_FLOW[ctx.regionIdx];
         const modeText = isZh ? mode.modeZh : mode.modeEn;
         return isZh
-          ? `全球擴張主題。請看上方三個區塊的箭頭流程：台灣、美國、中國，代表不同的 FDI 邏輯。在 Dunning 的 OLI 框架下，台灣偏重 Ownership 與技術互補，以合資引進大金、德山等技術；美國偏重 Location 的資源優勢，先併購、再以綠地拿頁岩氣；中國偏重市場区位，以寧波獨資園區貼近內需，並複製集團內熱電與管線分工。您目前選的是「${region}」，模式是「${modeText}」。${isZh ? r.detailZh : r.detailEn} 請記住：國際化是依區位優勢選工具，不是全球同一套劇本。`
+          ? `全球擴張主題。請看上方三個區塊的箭頭流程：台灣、美國、中國，代表不同的 FDI 邏輯。在 Dunning 的 OLI 框架下，台灣偏重 Ownership 與技術互補，以合資引進大金、德山等技術；美國偏重 Location 的資源優勢，先併購、再以綠地拿頁岩氣；中國偏重市場区位，以寧波獨資園區貼近內需，並複製集團內熱電與管線協作。您目前選的是「${region}」，模式是「${modeText}」。${isZh ? r.detailZh : r.detailEn} 請記住：國際化是依區位優勢選工具，不是全球同一套劇本。`
           : `Global expansion. The three-step flow shows Taiwan, the U.S., and China—different FDI logics under OLI. Taiwan: tech-seeking JVs; U.S.: resources via M&A then shale greenfield; China: market-seeking Ningbo park with group utilities. You selected ${region}, mode ${modeText}. ${r.detailEn} Internationalization matches location advantages to entry tools—not one script worldwide.`;
       }
 
@@ -1862,7 +1862,7 @@
           ? (isZh ? "綠地投資：高控制、高資本、適合核心石化" : "Greenfield: high control and capital for core petrochemicals")
           : (isZh ? "策略聯盟：分攤風險、補足技術或制度合法性" : "Alliance: share risk and secure technology or legitimacy");
         return isZh
-          ? `綠地投資與策略聯盟。請看決策流程圖的問題：「是否需要高度控制且為核心本業？」往下分支，${branch}。您目前關注的專案是「${proj}」。${isZh ? g.detailZh : g.detailEn} 麥寮六輕與美國石化，是資源與規模邏輯；越南河靜鋼鐵與產學聯盟，則在跨業或高不確定情境下，用合資分攱百億級風險。這呼應國際策略裡的進入模式權衡，沒有萬用答案，只有情境配適。`
+          ? `綠地投資與策略聯盟。請看決策流程圖的問題：「是否需要高度控制且為核心本業？」往下分支，${branch}。您目前關注的專案是「${proj}」。${isZh ? g.detailZh : g.detailEn} 麥寮六輕與美國石化，是資源與規模邏輯；越南河靜鋼鐵與產學聯盟，則在跨業或高不確定情境下，用合資分散百億級風險。這呼應國際策略裡的進入模式權衡，沒有萬用答案，只有情境配適。`
           : `Greenfield versus alliance. The decision tree asks about control in core businesses—${branch}. Project focus: ${proj}. ${g.detailEn} Mailiao and U.S. petrochem follow scale/resource logic; Ha Tinh steel and university alliances share risk in uncertain arenas—mode fit, not mode fashion.`;
       }
 
