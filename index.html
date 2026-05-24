@@ -3,29 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>台塑 1301 策略分析 | Formosa Plastics TP3</title>
-  <meta name="description" content="SMMC-EMI 國際策略管理 TP3：台塑 1301 互動式學習網頁——垂直整合、水平分工、全球擴張、併購、綠地投資與未來建議。" />
+  <title>台塑 1301 策略分析 | Formosa Plastics G7 · TP3</title>
+  <meta name="description" content="SMMC-EMI 國際策略管理 G7 · TP3：台塑 1301 互動式學習網頁——垂直整合、水平分工、全球擴張、併購、綠地投資與未來建議。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
   <style>
-    /* Mistral AI design tokens — see DESIGN.md (getdesign.md/mistral.ai) */
+    /* Mistral AI design tokens — 嚴格對齊 DESIGN.md (getdesign.md/mistral.ai) */
     :root {
-      --primary: #ff7100;
-      --primary-deep: #e56500;
-      --sunshine-700: #ff8c42;
-      --sunshine-500: #ffa94d;
-      --yellow-saturated: #ffc947;
-      --cream: #fff9eb;
-      --cream-soft: #fffdf5;
-      --cream-deeper: #f5edd4;
-      --beige-deep: #e8e2d4;
+      /* Brand & Accent — DESIGN.md 精準色碼 */
+      --primary: #fa520f;
+      --primary-deep: #cc3a05;
+      --sunshine-300: #ffd06a;
+      --sunshine-500: #ffb83e;
+      --sunshine-700: #ffa110;
+      --sunshine-800: #ff8105;
+      --sunshine-900: #ff8a00;
+      --yellow-saturated: #ffd900;
+      /* Cream / Neutral Warm */
+      --cream: #fff8e0;
+      --cream-soft: #fffaeb;
+      --cream-deeper: #fff0c2;
+      --beige-deep: #e6d5a8;
+      /* Surface */
       --canvas: #ffffff;
-      --ink: #131318;
-      --slate: #5c5c66;
-      --steel: #7a7a85;
-      --hairline: #e8e4dc;
-      --hairline-soft: #f0ece4;
+      --surface: #fafafa;
+      --surface-code: #1c1c1e;
+      --hairline: #e5e5e5;
+      --hairline-soft: #ededed;
+      --hairline-strong: #c7c7c7;
+      /* Text */
+      --ink: #1f1f1f;
+      --ink-tint: #3d3d3d;
+      --charcoal: #2c2c2c;
+      --slate: #4a4a4a;
+      --steel: #6a6a6a;
+      --stone: #8a8a8a;
+      --muted-color: #a8a8a8;
+      /* Semantic aliases */
       --bg: var(--cream-soft);
       --bg-elevated: var(--canvas);
       --bg-soft: var(--cream);
@@ -37,13 +52,23 @@
       --accent-3: var(--primary-deep);
       --card: var(--canvas);
       --on-primary: #ffffff;
-      --shadow: 0 4px 12px rgba(19, 19, 24, 0.06);
+      --on-dark: #ffffff;
+      --on-dark-muted: #a8a8a8;
+      /* Elevation */
+      --shadow-subtle: 0 1px 2px rgba(0,0,0,0.04);
+      --shadow: 0 4px 12px rgba(0,0,0,0.04);
+      --shadow-mockup: 0 12px 24px -4px rgba(0,0,0,0.08);
+      /* Radii — rounded.md = 8px, rounded.lg = 12px */
+      --radius-xs: 4px;
       --radius-sm: 8px;
       --radius-lg: 12px;
+      --radius-xl: 16px;
       --radius: var(--radius-lg);
-      --width: min(1180px, calc(100vw - 32px));
-      --font-display: "Playfair Display", "Noto Serif TC", Georgia, serif;
-      --font-ui: "Inter", "Noto Sans TC", system-ui, sans-serif;
+      /* Layout */
+      --width: min(1280px, calc(100vw - 64px));
+      /* Typography */
+      --font-display: "Playfair Display", "Noto Serif TC", "Times New Roman", Georgia, serif;
+      --font-ui: "Inter", "Noto Sans TC", ui-sans-serif, system-ui, -apple-system, sans-serif;
       --btn-primary-bg: var(--primary);
     }
     [data-theme="dark"] {
@@ -52,11 +77,16 @@
       --cream-soft: #1e1e24;
       --cream-deeper: #353228;
       --beige-deep: #3d3a34;
+      --surface: #222228;
       --ink: #f5f4f0;
+      --ink-tint: #e0dfd8;
       --slate: #b8b6ae;
       --steel: #94928a;
+      --stone: #7a7870;
+      --muted-color: #5a5850;
       --hairline: rgba(255, 255, 255, 0.1);
       --hairline-soft: rgba(255, 255, 255, 0.06);
+      --hairline-strong: rgba(255, 255, 255, 0.18);
       --bg: #131318;
       --bg-elevated: rgba(26, 26, 32, 0.95);
       --bg-soft: var(--cream);
@@ -64,55 +94,79 @@
       --muted: var(--slate);
       --line: var(--hairline);
       --card: rgba(255, 255, 255, 0.03);
+      --on-primary: #ffffff;
+      --on-dark: #ffffff;
+      --shadow-subtle: 0 1px 2px rgba(0,0,0,0.2);
       --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+      --shadow-mockup: 0 12px 24px -4px rgba(0,0,0,0.5);
+      --accent-3: #ff8105;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    button, select {
+      color: inherit;
+      font: inherit;
+    }
+    svg.lucide {
+      width: 1.2em;
+      height: 1.2em;
+      stroke-width: 2px;
+      display: inline-block;
+      vertical-align: middle;
+    }
     body {
       margin: 0;
       font-family: var(--font-ui);
       background:
-        radial-gradient(ellipse 80% 50% at 90% 0%, rgba(255, 113, 0, 0.08), transparent 50%),
-        radial-gradient(ellipse 60% 40% at 0% 100%, rgba(255, 201, 71, 0.1), transparent 45%),
+        radial-gradient(ellipse 80% 50% at 90% 0%, rgba(250, 82, 15, 0.07), transparent 50%),
+        radial-gradient(ellipse 60% 40% at 0% 100%, rgba(255, 217, 0, 0.08), transparent 45%),
         var(--bg);
       color: var(--text);
       line-height: 1.55;
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    .shell { width: var(--width); margin: 0 auto; padding-bottom: 48px; }
+    .shell { width: var(--width); margin: 0 auto; padding-bottom: 0; }
+    /* Navigation — DESIGN.md: sticky white bar, 64px, bottom hairline */
     .nav-wrap {
-      position: sticky; top: 12px; z-index: 100;
-      padding: 12px 0 0;
+      position: sticky; top: 0; z-index: 100;
+      margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);
+      background: var(--canvas);
+      border-bottom: 1px solid var(--hairline-soft);
     }
     .nav {
-      display: flex; align-items: center; gap: 8px;
-      padding: 10px 16px;
-      border: 1px solid var(--hairline-soft);
-      border-radius: var(--radius-lg);
-      background: var(--bg-elevated);
-      backdrop-filter: blur(14px);
-      box-shadow: var(--shadow);
-      overflow-x: auto;
+      display: flex; align-items: center; gap: 4px;
+      height: 64px;
+      max-width: 1280px; margin: 0 auto;
+      padding: 0 32px;
     }
     .nav-brand {
       font-weight: 700; font-size: 12px; letter-spacing: 0.14em;
       text-transform: uppercase; white-space: nowrap;
-      padding: 0 10px; border-right: 1px solid var(--line);
+      padding-right: 16px; margin-right: 8px;
+      border-right: 1px solid var(--hairline);
       cursor: pointer; color: var(--text); text-decoration: none;
     }
     .nav-btn, .nav-util {
-      border: 0; background: transparent; color: var(--muted);
-      padding: 8px 12px; border-radius: var(--radius-sm); cursor: pointer;
-      font: inherit; font-size: 13px; font-weight: 500; white-space: nowrap;
+      border: 0; background: transparent; color: var(--steel);
+      padding: 8px 14px; border-radius: var(--radius-sm); cursor: pointer;
+      font: inherit; font-size: 14px; font-weight: 500; white-space: nowrap;
       text-decoration: none; transition: color 0.18s ease, background 0.18s ease;
+      display: inline-flex; align-items: center; justify-content: center;
     }
     .nav-btn:hover, .nav-util:hover {
       color: var(--text);
       background: var(--cream);
     }
     .nav-btn.is-active {
-      color: var(--on-primary);
-      background: var(--primary);
+      color: var(--primary);
+      background: transparent;
+      font-weight: 600;
+    }
+    .nav-right {
+      display: flex; align-items: center; gap: 6px;
+      margin-left: auto;
     }
     .hamburger {
       display: none; flex-direction: column; gap: 5px;
@@ -125,7 +179,7 @@
     .hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.is-open span:nth-child(2) { opacity: 0; }
     .hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .nav-links { display: flex; align-items: center; gap: 4px; flex: 1; }
+    .nav-links { display: flex; align-items: center; gap: 2px; flex: 1; }
     .scroll-progress {
       position: fixed; top: 0; left: 0; z-index: 300;
       width: 100%; height: 3px; pointer-events: none;
@@ -137,14 +191,32 @@
       transform: scaleX(0); transform-origin: left;
       transition: transform 0.08s linear;
     }
+    /* Sections — DESIGN.md: section-lg = 96px, no border dividers */
     .view {
       display: block;
-      padding: 72px 0 56px;
-      scroll-margin-top: 88px;
+      padding: 96px 0;
+      scroll-margin-top: 64px;
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    .view--home { padding-top: 28px; padding-bottom: 64px; }
-    .view + .view {
-      border-top: 1px solid var(--hairline-soft);
+    .view.is-visible { opacity: 1; transform: translateY(0); }
+    /* Hero band — DESIGN.md: atmospheric sunset gradient, 120px padding */
+    .view--home {
+      position: relative;
+      padding: 120px 0 96px;
+      opacity: 1; transform: none;
+    }
+    .view--home::before {
+      content: ''; position: absolute;
+      top: 0; left: 50%; transform: translateX(-50%);
+      width: 100vw; height: 100%;
+      background:
+        linear-gradient(135deg,
+          rgba(255, 208, 106, 0.35) 0%,
+          rgba(255, 161, 16, 0.25) 30%,
+          rgba(255, 138, 0, 0.18) 55%,
+          rgba(250, 82, 15, 0.12) 100%);
+      z-index: -1;
     }
     .scroll-hint {
       display: flex; align-items: center; gap: 10px;
@@ -160,30 +232,31 @@
       50% { transform: translateY(6px); }
     }
     .hero {
-      min-height: min(85vh, 720px);
+      min-height: min(80vh, 640px);
       display: grid; align-items: center;
-      grid-template-columns: 1.2fr 0.8fr; gap: 28px;
+      grid-template-columns: 1.2fr 0.8fr; gap: 40px;
     }
     .eyebrow {
-      color: var(--accent); font-size: 12px; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); font-size: 11px; font-weight: 600;
+      letter-spacing: 1px; text-transform: uppercase;
+      line-height: 1.4;
     }
     h1 {
       font-family: var(--font-display);
-      font-size: clamp(40px, 7vw, 72px);
-      font-weight: 600;
+      font-size: clamp(40px, 7vw, 84px);
+      font-weight: 400;
       line-height: 1.05; margin: 14px 0;
-      letter-spacing: -0.03em;
+      letter-spacing: -1.5px;
     }
     h1 .accent { color: var(--primary); display: block; }
-    .lead { color: var(--muted); font-size: 17px; max-width: 620px; }
+    .lead { color: var(--ink-tint); font-size: 18px; font-weight: 400; line-height: 1.50; max-width: 620px; }
     .hero-card {
       border: 1px solid var(--beige-deep); border-radius: var(--radius-lg);
       background: var(--cream); padding: 28px;
     }
     .hero-card dl { margin: 0; display: grid; gap: 14px; }
-    .hero-card dt { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
-    .hero-card dd { margin: 4px 0 0; font-weight: 600; }
+    .hero-card dt { font-size: 11px; font-weight: 600; color: var(--steel); text-transform: uppercase; letter-spacing: 1px; line-height: 1.4; }
+    .hero-card dd { margin: 4px 0 0; font-size: 16px; font-weight: 500; line-height: 1.55; }
     .quick-nav {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 28px;
     }
@@ -196,20 +269,21 @@
     .quick-card:hover { border-color: var(--primary); box-shadow: var(--shadow); transform: translateY(-2px); }
     .quick-card strong { display: block; margin-bottom: 6px; font-size: 15px; }
     .quick-card span { color: var(--muted); font-size: 13px; }
-    .module-head { margin-bottom: 24px; }
+    .module-head { margin-bottom: 32px; }
     .module-head h2 {
       font-family: var(--font-display);
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 600;
-      margin: 8px 0 10px;
-      letter-spacing: -0.02em;
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 400;
+      margin: 8px 0 12px;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
     }
-    .module-head p { color: var(--muted); margin: 0; max-width: 720px; }
+    .module-head p { color: var(--muted); margin: 0; max-width: 720px; font-size: 16px; line-height: 1.55; }
     .researcher {
-      display: inline-block; margin-top: 10px; padding: 4px 12px;
-      border-radius: 999px; font-size: 12px; font-weight: 600;
+      display: inline-block; margin-top: 10px; padding: 4px 10px;
+      border-radius: 9999px; font-size: 13px; font-weight: 600;
       background: var(--cream-deeper); color: var(--ink);
-      border: 1px solid var(--beige-deep);
+      line-height: 1.4;
     }
     .module-grid {
       display: grid;
@@ -219,29 +293,34 @@
     .panel {
       border: 1px solid var(--hairline-soft); border-radius: var(--radius-lg);
       background: var(--canvas); padding: 24px; min-height: 200px;
-      box-shadow: 0 1px 2px rgba(19, 19, 24, 0.04);
+      box-shadow: var(--shadow-subtle);
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
     }
-    .panel h3 { margin: 0 0 12px; font-size: 16px; }
+    .panel:hover {
+      box-shadow: var(--shadow);
+      border-color: var(--hairline);
+    }
+    .panel h3 { margin: 0 0 14px; font-size: 22px; font-weight: 500; line-height: 1.30; }
     .panel p, .panel li { color: var(--muted); font-size: 14px; }
     .panel ul { padding-left: 18px; margin: 0; }
     .takeaway {
-      margin-top: 16px; padding: 24px 28px;
+      margin-top: 16px; padding: 32px;
       border-radius: var(--radius-lg);
       border: 1px solid var(--beige-deep);
       background: var(--cream);
     }
-    .takeaway strong { display: block; margin-bottom: 6px; color: var(--primary); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+    .takeaway strong { display: block; margin-bottom: 8px; color: var(--primary); font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; line-height: 1.4; }
     /* Interactive: chain */
     .chain { display: flex; flex-direction: column; gap: 10px; }
     .chain-node {
       display: flex; align-items: center; gap: 12px;
-      padding: 12px 14px; border-radius: 14px;
+      padding: 12px 14px; border-radius: var(--radius-lg);
       border: 1px solid var(--line); cursor: pointer;
-      transition: 0.2s; background: var(--bg-soft);
+      transition: all 0.18s ease; background: var(--bg-soft);
     }
     .chain-node:hover, .chain-node.is-active {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(124, 140, 255, 0.25);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(250, 82, 15, 0.15);
     }
     .chain-node .step {
       width: 28px; height: 28px; border-radius: 50%;
@@ -249,24 +328,25 @@
       background: var(--accent); color: #fff; flex-shrink: 0;
     }
     .chain-detail {
-      margin-top: 12px; padding: 14px; border-radius: 14px;
-      background: var(--bg-soft); border: 1px dashed var(--line);
+      margin-top: 12px; padding: 16px; border-radius: var(--radius-lg);
+      background: var(--cream-soft); border: 1px dashed var(--beige-deep);
       font-size: 14px; color: var(--muted); min-height: 80px;
+      line-height: 1.5;
     }
     /* Architecture / flow diagrams */
     .module-diagram {
-      margin-bottom: 18px;
-      border: 1px solid var(--hairline-soft);
+      margin-bottom: 24px;
+      border: 1px solid var(--beige-deep);
       border-radius: var(--radius-lg);
       background: var(--cream);
-      padding: 24px;
+      padding: 32px;
       overflow-x: auto;
     }
     .module-diagram__title {
       margin: 0 0 14px;
       font-size: 11px;
       font-weight: 600;
-      letter-spacing: 0.1em;
+      letter-spacing: 1px;
       text-transform: uppercase;
       color: var(--primary);
     }
@@ -293,7 +373,7 @@
       border: 2px solid var(--primary);
       border-radius: var(--radius-lg);
       padding: 18px 16px 14px;
-      background: linear-gradient(180deg, rgba(255, 113, 0, 0.06), transparent);
+      background: linear-gradient(180deg, rgba(250, 82, 15, 0.06), transparent);
       position: relative;
     }
     .flow-internal__badge {
@@ -307,21 +387,21 @@
     .flow-node-box {
       width: min(100%, 340px);
       padding: 14px 16px;
-      border-radius: 14px;
+      border-radius: var(--radius-lg);
       border: 1px solid var(--line);
       background: var(--bg-soft);
       cursor: pointer;
-      transition: 0.2s;
+      transition: all 0.18s ease;
       text-align: center;
     }
     .flow-node-box:hover, .flow-node-box.is-active {
-      border-color: var(--accent-2);
-      box-shadow: 0 0 0 2px rgba(94, 234, 212, 0.2);
+      border-color: var(--sunshine-700);
+      box-shadow: 0 0 0 2px rgba(250, 82, 15, 0.12);
       transform: translateY(-1px);
     }
     .flow-node-box.is-focus {
       border-color: var(--primary);
-      background: linear-gradient(135deg, rgba(255, 113, 0, 0.12), rgba(255, 201, 71, 0.08));
+      background: linear-gradient(135deg, rgba(250, 82, 15, 0.10), rgba(255, 217, 0, 0.06));
     }
     .flow-node-box .code {
       font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
@@ -337,7 +417,7 @@
       display: inline-block; margin-top: 8px;
       padding: 2px 10px; border-radius: 999px;
       font-size: 11px; font-weight: 600;
-      background: var(--cream-deeper); color: var(--primary-deep);
+      background: var(--cream-deeper); color: var(--accent-3);
     }
     .flow-connector {
       width: 2px; height: 20px;
@@ -374,27 +454,27 @@
       align-items: center; justify-content: center;
       text-align: center;
       border: 2px solid var(--primary);
-      background: rgba(255, 113, 0, 0.08);
+      background: rgba(250, 82, 15, 0.08);
       font-size: 12px; font-weight: 700;
       line-height: 1.35;
     }
     .arch-spoke {
       padding: 12px;
-      border-radius: 14px;
+      border-radius: var(--radius-lg);
       border: 1px solid var(--line);
       background: var(--bg-soft);
       cursor: pointer;
       text-align: center;
       font-size: 13px;
-      transition: 0.2s;
+      transition: all 0.18s ease;
     }
     .arch-spoke strong { display: block; font-size: 14px; }
     .arch-spoke small { color: var(--muted); font-size: 11px; }
     .arch-spoke:hover, .arch-spoke.is-active {
       border-color: var(--primary);
-      background: rgba(255, 113, 0, 0.08);
+      background: rgba(250, 82, 15, 0.06);
     }
-    .arch-spoke.is-focus { border-color: var(--primary); box-shadow: 0 0 0 2px rgba(255, 113, 0, 0.2); }
+    .arch-spoke.is-focus { border-color: var(--primary); box-shadow: 0 0 0 2px rgba(250, 82, 15, 0.2); }
     .arch-spoke[data-pos="tl"] { grid-column: 1; grid-row: 1; }
     .arch-spoke[data-pos="tr"] { grid-column: 3; grid-row: 1; }
     .arch-spoke[data-pos="bl"] { grid-column: 1; grid-row: 3; }
@@ -412,11 +492,11 @@
     }
     .exp-step {
       flex: 1; min-width: 140px; max-width: 200px;
-      padding: 14px; border-radius: 14px;
+      padding: 14px; border-radius: var(--radius-lg);
       border: 1px solid var(--line);
       background: var(--bg-soft);
       cursor: pointer; text-align: center;
-      transition: 0.2s;
+      transition: all 0.18s ease;
     }
     .exp-step:hover, .exp-step.is-active { border-color: var(--accent); }
     .exp-step .flag { font-size: 22px; margin-bottom: 6px; }
@@ -448,9 +528,10 @@
     }
     .ma-flow-step button {
       width: 100%; border: 1px solid var(--line);
-      background: var(--bg-soft); border-radius: 12px;
+      background: var(--bg-soft); border-radius: var(--radius-lg);
       padding: 10px 8px; cursor: pointer; font: inherit;
       font-size: 12px; color: var(--text);
+      transition: all 0.18s ease;
     }
     .ma-flow-step.is-active button { border-color: var(--accent); }
     /* GF decision */
@@ -458,7 +539,7 @@
       display: flex; flex-direction: column; align-items: center; gap: 8px;
     }
     .decision-q {
-      padding: 10px 16px; border-radius: 12px;
+      padding: 10px 16px; border-radius: var(--radius-lg);
       border: 1px solid var(--line); font-size: 13px;
       background: var(--bg-soft); text-align: center;
     }
@@ -466,13 +547,13 @@
       display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%;
     }
     .decision-branch {
-      padding: 14px; border-radius: 14px;
+      padding: 14px; border-radius: var(--radius-lg);
       border: 1px solid var(--line); cursor: pointer;
-      text-align: center; transition: 0.2s;
+      text-align: center; transition: all 0.18s ease;
     }
     .decision-branch:hover, .decision-branch.is-active {
       border-color: var(--primary);
-      background: rgba(255, 113, 0, 0.05);
+      background: rgba(250, 82, 15, 0.05);
     }
     .decision-branch strong { display: block; margin-bottom: 4px; }
     .decision-branch span { font-size: 12px; color: var(--muted); }
@@ -480,28 +561,28 @@
     .priority-ladder { display: flex; flex-direction: column; gap: 8px; }
     .priority-row {
       display: flex; align-items: center; gap: 12px;
-      padding: 10px 14px; border-radius: 12px;
+      padding: 10px 14px; border-radius: var(--radius-lg);
       border: 1px solid var(--line); cursor: pointer;
-      transition: 0.2s;
+      transition: all 0.18s ease;
     }
     .priority-row:hover, .priority-row.is-active {
       border-color: var(--primary);
-      background: rgba(255, 113, 0, 0.05);
+      background: rgba(250, 82, 15, 0.05);
     }
     .priority-badge {
       flex-shrink: 0; width: 32px; height: 32px;
       border-radius: 8px; display: grid; place-items: center;
       font-weight: 800; font-size: 14px;
     }
-    .priority-badge--a { background: rgba(255, 113, 0, 0.15); color: var(--primary-deep); }
+    .priority-badge--a { background: rgba(250, 82, 15, 0.12); color: var(--accent-3); }
     .priority-badge--b { background: var(--cream-deeper); color: var(--ink); }
     .priority-row b { font-size: 14px; }
     .priority-row span { font-size: 12px; color: var(--muted); display: block; }
     /* Strategy lens: 理論 → 證據 → 分析 */
     .strategy-lens { margin-top: 14px; display: grid; gap: 10px; }
     .lens-row {
-      padding: 12px 14px; border-radius: 12px;
-      background: var(--bg-soft); border: 1px solid var(--line);
+      padding: 12px 14px; border-radius: var(--radius-lg);
+      background: var(--cream-soft); border: 1px solid var(--line);
       font-size: 13px; line-height: 1.65; color: var(--muted);
     }
     .lens-row--theory { border-left: 3px solid var(--accent); }
@@ -523,8 +604,8 @@
     /* Org grid */
     .org-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .org-card {
-      padding: 14px; border-radius: 14px; border: 1px solid var(--line);
-      cursor: pointer; transition: 0.2s; background: var(--bg-soft);
+      padding: 14px; border-radius: var(--radius-lg); border: 1px solid var(--line);
+      cursor: pointer; transition: all 0.18s ease; background: var(--bg-soft);
     }
     .org-card:hover, .org-card.is-active { border-color: var(--accent-2); }
     .org-card strong { display: block; margin-bottom: 6px; font-size: 14px; }
@@ -532,13 +613,13 @@
     /* Map */
     .map-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
     .map-region {
-      padding: 16px 12px; text-align: center; border-radius: 14px;
-      border: 1px solid var(--line); cursor: pointer; transition: 0.2s;
+      padding: 16px 12px; text-align: center; border-radius: var(--radius-lg);
+      border: 1px solid var(--line); cursor: pointer; transition: all 0.18s ease;
       background: var(--bg-soft); font-weight: 600; font-size: 14px;
     }
     .map-region:hover, .map-region.is-active {
-      background: linear-gradient(135deg, rgba(124, 140, 255, 0.2), rgba(94, 234, 212, 0.15));
-      border-color: var(--accent);
+      background: rgba(250, 82, 15, 0.06);
+      border-color: var(--primary);
     }
     /* Timeline */
     .timeline { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
@@ -548,14 +629,14 @@
       cursor: pointer; font: inherit; font-size: 13px;
     }
     .timeline button.is-active {
-      color: var(--text); border-color: var(--accent);
-      background: rgba(124, 140, 255, 0.15);
+      color: var(--on-primary); border-color: var(--primary);
+      background: var(--primary);
     }
     /* Greenfield cards */
     .gf-grid { display: grid; gap: 10px; }
     .gf-card {
-      padding: 14px; border-radius: 14px; border: 1px solid var(--line);
-      cursor: pointer; transition: 0.2s;
+      padding: 14px; border-radius: var(--radius-lg); border: 1px solid var(--line);
+      cursor: pointer; transition: all 0.18s ease;
     }
     .gf-card:hover, .gf-card.is-active { border-color: var(--primary); }
     .gf-card strong { display: block; font-size: 14px; margin-bottom: 4px; }
@@ -563,89 +644,395 @@
     /* Challenge table */
     .dual-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .challenge-item {
-      padding: 14px; border-radius: 14px; border: 1px solid var(--line);
-      cursor: pointer; transition: 0.2s;
+      padding: 14px; border-radius: var(--radius-lg); border: 1px solid var(--line);
+      cursor: pointer; transition: all 0.18s ease;
     }
     .challenge-item:hover, .challenge-item.is-active {
       border-color: var(--primary);
-      background: rgba(255, 113, 0, 0.06);
+      background: rgba(250, 82, 15, 0.05);
     }
     .challenge-item b { display: block; margin-bottom: 6px; font-size: 14px; }
     .challenge-item span { font-size: 12px; color: var(--muted); }
-    .compare-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
-    .compare-table th, .compare-table td {
-      border: 1px solid var(--line); padding: 8px 10px; text-align: left;
+    .compare-table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      font-size: 14px; margin-top: 12px; border-radius: var(--radius-lg); overflow: hidden;
+      border: 1px solid var(--hairline);
     }
-    .compare-table th { background: var(--bg-soft); color: var(--text); }
+    .compare-table th, .compare-table td {
+      border-bottom: 1px solid var(--hairline-soft); padding: 10px 14px; text-align: left;
+    }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table th { background: var(--cream); color: var(--ink); font-weight: 500; font-size: 14px; }
     .btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
     .btn {
       border: 1px solid transparent; border-radius: var(--radius-sm);
       padding: 10px 20px; min-height: 44px; font: inherit; font-weight: 500; font-size: 14px;
       cursor: pointer; color: var(--on-primary); background: var(--primary);
       text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
-      transition: background 0.18s ease, transform 0.18s ease;
+      transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+      line-height: 1.3;
     }
-    .btn:hover { background: var(--primary-deep); transform: translateY(-1px); }
+    .btn:hover { background: var(--primary-deep); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(250, 82, 15, 0.25); }
+    .btn:active { background: var(--primary-deep); transform: translateY(0); }
     .btn--ghost {
       color: var(--ink); background: var(--canvas);
       border-color: var(--beige-deep);
     }
-    .btn--ghost:hover { background: var(--cream); }
+    .btn--ghost:hover { background: var(--cream); box-shadow: var(--shadow); }
+    /* CTA Banner — DESIGN.md: cta-banner-cream */
+    .cta-banner {
+      position: relative;
+      margin-top: 96px; padding: 64px 0;
+      text-align: center;
+    }
+    .cta-banner::before {
+      content: ''; position: absolute;
+      top: 0; left: 50%; transform: translateX(-50%);
+      width: 100vw; height: 100%;
+      background: var(--cream);
+      border-top: 1px solid var(--beige-deep);
+      z-index: -1;
+    }
+    .cta-banner__title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 400; line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin: 0 0 24px; color: var(--ink);
+    }
+    /* Sunset Stripe — DESIGN.md: brand's most recognizable signature */
     .sunset-stripe {
-      height: 5px; width: 100%; margin-top: 48px;
+      position: relative;
+    }
+    .sunset-stripe::before {
+      content: ''; position: absolute;
+      top: 0; left: 50%; transform: translateX(-50%);
+      width: 100vw; height: 100%;
       background: linear-gradient(90deg,
         var(--primary) 0%,
-        var(--sunshine-700) 28%,
-        var(--sunshine-500) 52%,
-        var(--yellow-saturated) 76%,
+        var(--sunshine-900) 15%,
+        var(--sunshine-700) 32%,
+        var(--sunshine-500) 50%,
+        var(--yellow-saturated) 70%,
         var(--cream) 100%);
+      z-index: -1;
     }
+    .sunset-stripe { padding: 20px 0; margin-top: 0; }
+    /* Footer — DESIGN.md: footer-region, cream bg, multi-column */
     footer {
-      margin-top: 0; padding: 32px 0 40px;
+      position: relative; margin-top: 0;
+      padding: 64px 0 40px;
+      color: var(--slate); font-size: 14px;
+    }
+    footer::before {
+      content: ''; position: absolute;
+      top: 0; left: 50%; transform: translateX(-50%);
+      width: 100vw; height: 100%;
       background: var(--cream);
-      border-top: none; text-align: center;
-      color: var(--muted); font-size: 14px;
+      z-index: -1;
     }
-    .footer-team {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 16px;
-      margin-bottom: 12px; font-size: 13px;
+    .footer-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+      margin-bottom: 32px; text-align: left;
     }
-  .voice-bar {
-      position: fixed; bottom: 16px; right: 16px; z-index: 200;
-      display: flex; align-items: center; gap: 8px;
-      padding: 10px 14px; border-radius: var(--radius-lg);
-      border: 1px solid var(--hairline-soft); background: var(--canvas);
-      box-shadow: var(--shadow); flex-wrap: wrap; max-width: calc(100vw - 32px);
+    .footer-col { display: flex; flex-direction: column; gap: 6px; }
+    .footer-col strong {
+      font-size: 11px; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; color: var(--ink); margin-bottom: 4px;
     }
-    .voice-bar button {
-      border: 0; background: var(--bg-soft); color: var(--text);
-      width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 16px;
+    .footer-col a {
+      color: var(--primary); text-decoration: none; font-size: 14px;
+      padding: 2px 0; transition: color 0.18s ease;
     }
-    .voice-bar button.play { width: 48px; height: 48px; background: var(--primary); color: var(--on-primary); border-radius: var(--radius-sm); }
-    .voice-status { font-size: 12px; color: var(--muted); max-width: 180px; }
-    .voice-rate { border: 1px solid var(--line); border-radius: 8px; padding: 4px 8px; font-size: 12px; background: var(--bg-soft); color: var(--text); }
-    @media (max-width: 960px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .module-grid { grid-template-columns: 1fr; }
-      .quick-nav { grid-template-columns: 1fr 1fr; }
-      .map-grid { grid-template-columns: 1fr; }
-      .dual-col { grid-template-columns: 1fr; }
+    .footer-col a:hover { color: var(--primary-deep); text-decoration: underline; }
+    .footer-col span { color: var(--slate); font-size: 13px; }
+    .footer-bottom {
+      padding-top: 24px; border-top: 1px solid var(--beige-deep);
+      text-align: center; font-size: 13px; color: var(--steel);
     }
-    @media (max-width: 720px) {
+    .voice-bar {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 200;
+      width: min(420px, calc(100vw - 32px));
+      background: var(--cream);
+      border: 1px solid var(--beige-deep);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .voice-bar.is-collapsed {
+      right: 0;
+      width: 52px;
+      height: 84px;
+      padding: 0;
+      border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+      border-right: none;
+      gap: 0;
+      bottom: 120px;
+      overflow: hidden;
+    }
+    .voice-bar__expanded {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+    .voice-bar.is-collapsed .voice-bar__expanded {
+      display: none;
+    }
+    .voice-bar__collapse-btn {
+      background: transparent;
+      border: none;
+      color: var(--steel);
+      cursor: pointer;
+      padding: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      transition: all 0.15s ease;
+      margin-left: auto;
+    }
+    .voice-bar__collapse-btn:hover {
+      background: var(--cream-deeper);
+      color: var(--primary);
+    }
+    .voice-bar__collapse-btn i {
+      width: 16px;
+      height: 16px;
+    }
+    .voice-bar__collapsed-tab {
+      display: none;
+      background: transparent;
+      border: none;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    }
+    .voice-bar.is-collapsed .voice-bar__collapsed-tab {
+      display: flex;
+    }
+    .voice-bar__collapsed-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      color: var(--ink);
+      width: 100%;
+      height: 100%;
+    }
+    .expand-chevron {
+      color: var(--steel);
+      transition: transform 0.2s ease;
+      width: 16px;
+      height: 16px;
+    }
+    .voice-bar__collapsed-tab:hover .expand-chevron {
+      color: var(--primary);
+      transform: translateX(-2px);
+    }
+    .headphones-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--primary);
+    }
+    .voice-wave {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 2px;
+      height: 12px;
+      width: 24px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .voice-bar.is-playing-audio .voice-wave {
+      opacity: 1;
+    }
+    .wave-bar {
+      width: 2px;
+      height: 3px;
+      background-color: var(--primary);
+      border-radius: 1px;
+    }
+    .voice-bar.is-playing-audio .wave-bar {
+      animation: wave-animation 0.8s ease-in-out infinite alternate;
+    }
+    .voice-bar.is-playing-audio .wave-bar:nth-child(1) { animation-duration: 0.6s; animation-delay: -0.15s; }
+    .voice-bar.is-playing-audio .wave-bar:nth-child(2) { animation-duration: 0.9s; animation-delay: -0.4s; }
+    .voice-bar.is-playing-audio .wave-bar:nth-child(3) { animation-duration: 0.7s; animation-delay: -0.25s; }
+    .voice-bar.is-playing-audio .wave-bar:nth-child(4) { animation-duration: 1.0s; animation-delay: -0.6s; }
+
+    @keyframes wave-animation {
+      0% { height: 3px; }
+      100% { height: 12px; }
+    }
+    .voice-bar__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--beige-deep);
+      padding-bottom: 8px;
+    }
+    .voice-bar__hint {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--steel);
+      line-height: 1.4;
+    }
+    .voice-bar__body {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .voice-bar__status-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+    .voice-bar__indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--stone);
+      display: inline-block;
+      flex-shrink: 0;
+      transition: background 0.20s ease, box-shadow 0.20s ease;
+    }
+    .voice-bar__indicator.is-playing {
+      background: var(--primary);
+      box-shadow: 0 0 8px var(--primary);
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+    .voice-status {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1;
+    }
+    .voice-bar__controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      justify-content: flex-end;
+    }
+    .voice-rate {
+      border: 1px solid var(--beige-deep);
+      border-radius: var(--radius-sm);
+      padding: 6px 24px 6px 10px;
+      font-size: 12px;
+      font-weight: 500;
+      background: var(--canvas) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E") no-repeat right 8px center;
+      background-size: 12px;
+      color: var(--ink);
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      min-height: 36px;
+    }
+    .voice-rate:hover {
+      background-color: var(--cream-soft);
+      border-color: var(--primary);
+    }
+    .voice-bar__btn {
+      border: 1px solid var(--beige-deep);
+      background: var(--canvas);
+      color: var(--ink);
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.18s ease;
+    }
+    .voice-bar__btn:hover {
+      background: var(--cream-deeper);
+      border-color: var(--beige-deep);
+      color: var(--primary-deep);
+    }
+    .voice-bar__btn--play {
+      background: var(--primary);
+      color: var(--on-primary);
+      border-color: var(--primary);
+      width: 42px;
+      height: 42px;
+    }
+    .voice-bar__btn--play:hover {
+      background: var(--primary-deep);
+      border-color: var(--primary-deep);
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(250, 82, 15, 0.2);
+    }
+    /* RWD — DESIGN.md 規格對齊 */
+    
+    /* 1. 桌上型電腦 (1024px - 1279px) */
+    @media (max-width: 1279px) {
+      h1 { font-size: 76px; }
+    }
+
+    /* 2. 平板電腦 (768px - 1023px) */
+    @media (max-width: 1023px) {
       .hamburger { display: flex; margin-left: auto; }
       .nav-links {
-        display: none; position: absolute; top: calc(100% + 8px); left: 0; right: 0;
+        display: none; position: absolute; top: calc(100% + 1px); left: 0; right: 0;
         flex-direction: column; align-items: stretch;
-        padding: 12px; border-radius: var(--radius);
-        border: 1px solid var(--line); background: var(--bg-elevated);
+        padding: 16px; background: var(--canvas);
+        border-bottom: 1px solid var(--hairline-soft);
         box-shadow: var(--shadow);
       }
       .nav-links.is-open { display: flex; }
-      .nav-wrap { position: relative; }
-      .nav { flex-wrap: wrap; position: relative; }
-      .quick-nav { grid-template-columns: 1fr; }
+      .nav { flex-wrap: wrap; position: relative; padding: 0 16px; }
+      .hero { grid-template-columns: 1fr; min-height: auto; gap: 32px; }
+      h1 { font-size: 64px; }
+      .view { padding: 64px 0; }
+      .view--home { padding: 96px 0 64px; }
+      .module-grid { grid-template-columns: 1fr; gap: 24px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .voice-bar { left: 50%; transform: translateX(-50%); right: auto; }
+      .voice-bar.is-collapsed { left: auto; transform: none; right: 0; bottom: 120px; }
+    }
+
+    /* 3. 行動端 (大) (480px - 767px) */
+    @media (max-width: 767px) {
+      h1 { font-size: 52px; }
+      .quick-nav { grid-template-columns: 1fr 1fr; }
       .org-grid { grid-template-columns: 1fr; }
-      .voice-bar { left: 16px; right: 16px; justify-content: center; }
+      .map-grid { grid-template-columns: 1fr; }
+      .dual-col { grid-template-columns: 1fr; }
+    }
+
+    /* 4. 行動端 (小) (< 480px) */
+    @media (max-width: 479px) {
+      h1 { font-size: 40px; }
+      .quick-nav { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .panel, .takeaway, .hero-card { padding: 16px; }
+      .module-diagram { padding: 16px; }
+      .compare-table th, .compare-table td { padding: 8px 10px; font-size: 13px; }
     }
   </style>
 </head>
@@ -654,7 +1041,7 @@
   <div class="shell">
     <header class="nav-wrap">
       <nav class="nav" aria-label="主導覽">
-        <a class="nav-brand" href="#home" data-nav="home">TP3 · 1301</a>
+        <a class="nav-brand" href="#home" data-nav="home">G7 · TP3 · 1301</a>
         <button class="hamburger" id="hamburger" aria-label="開啟選單" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -666,8 +1053,10 @@
           <button class="nav-btn" data-nav="ma" data-i18n="nav.ma">併購</button>
           <button class="nav-btn" data-nav="greenfield" data-i18n="nav.greenfield">綠地投資</button>
           <button class="nav-btn" data-nav="future" data-i18n="nav.future">未來挑戰</button>
+        </div>
+        <div class="nav-right">
           <button class="nav-util" id="lang-toggle" aria-label="切換語言">EN</button>
-          <button class="nav-util" id="theme-toggle" aria-label="切換主題">🌓</button>
+          <button class="nav-util" id="theme-toggle" aria-label="切換主題"><i data-lucide="moon"></i></button>
         </div>
       </nav>
     </header>
@@ -677,7 +1066,7 @@
       <section class="view view--home" id="home" data-view="home">
         <div class="hero">
           <div>
-            <p class="eyebrow" data-i18n="home.eyebrow">SMMC-EMI · 國際策略管理 · TP3</p>
+            <p class="eyebrow" data-i18n="home.eyebrow">SMMC-EMI · 國際策略管理 · G7 · TP3</p>
             <h1>
               <span data-i18n="home.title1">台塑股份有限公司</span>
               <span class="accent" data-i18n="home.title2">1301 策略分析</span>
@@ -691,8 +1080,8 @@
             </div>
             <div class="quick-nav" id="quick-nav"></div>
             <p class="scroll-hint">
-              <span class="scroll-hint__icon" aria-hidden="true">↓</span>
-              <span data-i18n="home.scrollHint">向下滾動即可依序閱讀六個模組，或點上方導覽快速跳轉</span>
+              <span class="scroll-hint__icon" aria-hidden="true"><i data-lucide="chevrons-down"></i></span>
+              <span data-i18n="home.scrollHint">向下滾動即可依序閱讀六個主題，或點上方導覽快速跳轉</span>
             </p>
           </div>
           <aside class="hero-card">
@@ -709,7 +1098,7 @@
       <!-- VERTICAL -->
       <section class="view" id="vertical" data-view="vertical">
         <header class="module-head">
-          <p class="eyebrow" data-i18n="vertical.eyebrow">模組 1</p>
+          <p class="eyebrow" data-i18n="vertical.eyebrow">主題 1</p>
           <h2 data-i18n="vertical.title">垂直整合</h2>
           <p data-i18n="vertical.intro">台塑四寶整合塑化產業鏈上中下游，1301 位於中游聚合，原料高度依賴台塑化，形成成本與供貨護城河。</p>
           <span class="researcher" data-i18n="vertical.researcher">研究員：庭伃 Tina</span>
@@ -743,7 +1132,7 @@
       <!-- HORIZONTAL -->
       <section class="view" id="horizontal" data-view="horizontal">
         <header class="module-head">
-          <p class="eyebrow" data-i18n="horizontal.eyebrow">模組 2</p>
+          <p class="eyebrow" data-i18n="horizontal.eyebrow">主題 2</p>
           <h2 data-i18n="horizontal.title">水平分工</h2>
           <p data-i18n="horizontal.intro">台塑四寶在麥寮六輕形成群聚：各公司專注不同產品線，共享公用設施與採購網絡，產品線互補降低單一景氣風險。</p>
           <span class="researcher" data-i18n="horizontal.researcher">研究員：泱慈 Julia</span>
@@ -776,7 +1165,7 @@
       <!-- GLOBAL -->
       <section class="view" id="global" data-view="global">
         <header class="module-head">
-          <p class="eyebrow" data-i18n="global.eyebrow">模組 3</p>
+          <p class="eyebrow" data-i18n="global.eyebrow">主題 3</p>
           <h2 data-i18n="global.title">全球擴張</h2>
           <p data-i18n="global.intro">台塑地理擴張涵蓋母國合資引進技術、美國併購＋綠地垂直整合，以及中國寧波獨資園區與集團內部分工。</p>
           <span class="researcher" data-i18n="global.researcher">研究員：郁珊 Miranda</span>
@@ -810,7 +1199,7 @@
       <!-- M&A -->
       <section class="view" id="ma" data-view="ma">
         <header class="module-head">
-          <p class="eyebrow" data-i18n="ma.eyebrow">模組 4</p>
+          <p class="eyebrow" data-i18n="ma.eyebrow">主題 4</p>
           <h2 data-i18n="ma.title">併購</h2>
           <p data-i18n="ma.intro">併購讓台塑快速取得東道國產能、客戶與執照；美國 1980 年代併購是海外立足關鍵，本土亦有同業整合案例。</p>
           <span class="researcher" data-i18n="ma.researcher">研究員：郁珊 Miranda</span>
@@ -844,7 +1233,7 @@
       <!-- GREENFIELD -->
       <section class="view" id="view-greenfield" data-view="greenfield">
         <header class="module-head">
-          <p class="eyebrow" data-i18n="gf.eyebrow">模組 5</p>
+          <p class="eyebrow" data-i18n="gf.eyebrow">主題 5</p>
           <h2 data-i18n="gf.title">綠地投資與策略聯盟</h2>
           <p data-i18n="gf.intro">綠地投資強調從零建廠、高度控制；策略聯盟則在技術、政治或財務風險較高時分攤資源。台塑兩者並用。</p>
           <span class="researcher" data-i18n="gf.researcher">研究員：馥瑄 Angela</span>
@@ -891,7 +1280,7 @@
       <!-- FUTURE -->
       <section class="view" id="future" data-view="future">
         <header class="module-head">
-          <p class="eyebrow" data-i18n="future.eyebrow">模組 6</p>
+          <p class="eyebrow" data-i18n="future.eyebrow">主題 6</p>
           <h2 data-i18n="future.title">未來挑戰與建議</h2>
           <p data-i18n="future.intro">台塑 1301 面臨碳費、能源轉型、亞洲產能過剩與貿易風險；2024 年首度全年虧損，需從碳治理與產品組合重整突圍。</p>
           <span class="researcher" data-i18n="future.researcher">研究員：承逸 Alex</span>
@@ -926,51 +1315,107 @@
       </section>
     </main>
 
+    <!-- CTA Banner — DESIGN.md: cta-banner-cream -->
+    <section class="cta-banner">
+      <h2 class="cta-banner__title" data-i18n="cta.title">重思台塑的國際化路徑與轉型課題。</h2>
+      <div class="btn-row" style="justify-content:center;">
+        <button class="btn" data-nav="vertical" data-i18n="cta.btn1">從第一主題開始</button>
+        <button class="btn btn--ghost" data-nav="home" data-i18n="cta.btn2">回到首頁</button>
+      </div>
+    </section>
+
     <div class="sunset-stripe" role="presentation" aria-hidden="true"></div>
 
     <footer>
-      <div class="footer-team">
-        <span>怡婷 Tina · 網頁</span>
-        <span>庭伃 Tina · 垂直整合</span>
-        <span>泱慈 Julia · 水平分工</span>
-        <span>郁珊 Miranda · 擴張與併購</span>
-        <span>馥瑄 Angela · 綠地與聯盟</span>
-        <span>承逸 Alex · 未來建議</span>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <strong data-i18n="footer.col1">分析主題</strong>
+          <a href="#vertical" data-nav="vertical" data-i18n="nav.vertical">垂直整合</a>
+          <a href="#horizontal" data-nav="horizontal" data-i18n="nav.horizontal">水平分工</a>
+          <a href="#global" data-nav="global" data-i18n="nav.global">全球擴張</a>
+        </div>
+        <div class="footer-col">
+          <strong data-i18n="footer.col2">策略工具</strong>
+          <a href="#ma" data-nav="ma" data-i18n="nav.ma">併購</a>
+          <a href="#greenfield" data-nav="greenfield" data-i18n="nav.greenfield">綠地投資</a>
+          <a href="#future" data-nav="future" data-i18n="nav.future">未來挑戰</a>
+        </div>
+        <div class="footer-col">
+          <strong data-i18n="footer.col3">研究團隊</strong>
+          <span>怡婷 Tina · 網頁</span>
+          <span>庭伃 Tina · 垂直整合</span>
+          <span>泱慈 Julia · 水平分工</span>
+        </div>
+        <div class="footer-col">
+          <strong>&nbsp;</strong>
+          <span>郁珊 Miranda · 擴張與併購</span>
+          <span>馥瑄 Angela · 綠地與聯盟</span>
+          <span>承逸 Alex · 未來建議</span>
+        </div>
       </div>
-      <p data-i18n="footer.line">SMMC-EMI 國際策略管理 · TP3 · 台塑 1301 · 指導教授 Prof. lolo</p>
+      <div class="footer-bottom">
+        <p data-i18n="footer.line">SMMC-EMI 國際策略管理 · G7 · TP3 · 台塑 1301 · 指導教授 Prof. lolo</p>
+      </div>
     </footer>
   </div>
 
   <div class="voice-bar" id="voice-bar">
-    <span class="voice-hint" data-i18n="voice.hint">播放後，導覽員將依「目前頁面與您點選的圖表」講解</span>
-    <span class="voice-status" id="voice-status" data-i18n="voice.idle">語音導覽就緒</span>
-    <select class="voice-rate" id="voice-rate" aria-label="語速">
-      <option value="0.85">0.85×</option>
-      <option value="1" selected>1×</option>
-      <option value="1.15">1.15×</option>
-    </select>
-    <button type="button" id="voice-prev" title="上一段">⏮</button>
-    <button type="button" class="play" id="voice-play" title="播放/暫停">▶</button>
-    <button type="button" id="voice-stop" title="停止">⏹</button>
-    <button type="button" id="voice-next" title="下一段">⏭</button>
+    <div class="voice-bar__expanded">
+      <div class="voice-bar__header">
+        <span class="voice-bar__hint" data-i18n="voice.hint">播放後，導覽員將依「目前頁面與您點選的圖表」講解</span>
+        <button type="button" class="voice-bar__collapse-btn" id="voice-collapse-btn" title="收闔導覽">
+          <i data-lucide="chevron-right"></i>
+        </button>
+      </div>
+      <div class="voice-bar__body">
+        <div class="voice-bar__status-wrap">
+          <span class="voice-bar__indicator"></span>
+          <span class="voice-status" id="voice-status" data-i18n="voice.idle">語音導覽就緒</span>
+        </div>
+        <div class="voice-bar__controls">
+          <select class="voice-rate" id="voice-rate" aria-label="語速">
+            <option value="0.85">0.85×</option>
+            <option value="1" selected>1×</option>
+            <option value="1.15">1.15×</option>
+          </select>
+          <button type="button" class="voice-bar__btn" id="voice-prev" title="上一段"><i data-lucide="skip-back"></i></button>
+          <button type="button" class="voice-bar__btn voice-bar__btn--play" id="voice-play" title="播放/暫停"><i data-lucide="play"></i></button>
+          <button type="button" class="voice-bar__btn" id="voice-stop" title="停止"><i data-lucide="square"></i></button>
+          <button type="button" class="voice-bar__btn" id="voice-next" title="下一段"><i data-lucide="skip-forward"></i></button>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="voice-bar__collapsed-tab" id="voice-expand-btn" title="展開導覽" aria-label="展開語音導覽">
+      <div class="voice-bar__collapsed-inner">
+        <i data-lucide="chevron-left" class="expand-chevron"></i>
+        <i data-lucide="headphones" class="headphones-icon"></i>
+        <div class="voice-wave">
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+        </div>
+      </div>
+    </button>
   </div>
 
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     const I18N = {
       zh: {
         "nav.home": "首頁", "nav.vertical": "垂直整合", "nav.horizontal": "水平分工",
         "nav.global": "全球擴張", "nav.ma": "併購", "nav.greenfield": "綠地投資", "nav.future": "未來挑戰",
-        "home.eyebrow": "SMMC-EMI · 國際策略管理 · TP3",
+        "home.eyebrow": "SMMC-EMI · 國際策略管理 · G7 · TP3",
         "home.title1": "台塑股份有限公司", "home.title2": "1301 策略分析",
-        "home.lead": "本網站是 SMMC-EMI「國際策略管理」TP3 專題：以台塑 1301 為例，用理論—證據—分析三層架構，解析垂直整合、水平分工、跨國進入模式（合資／併購／綠地）與轉型挑戰，而非只做公司介紹。",
+        "home.lead": "本網站是 SMMC-EMI「國際策略管理」G7 · TP3 專題：以台塑 1301 為例，用理論—證據—分析三層架構，解析垂直整合、水平分工、跨國進入模式（合資／併購／綠地）與轉型挑戰，而非只做公司介紹。",
         "lens.theory": "策略理論", "lens.evidence": "實證／資料", "lens.insight": "我們的分析",
         "home.cta1": "開始：垂直整合", "home.cta2": "跳至：未來建議",
-        "home.scrollHint": "向下滾動即可依序閱讀六個模組，或點上方導覽快速跳轉",
+        "home.scrollHint": "向下滾動即可依序閱讀六個主題，或點上方導覽快速跳轉",
         "home.meta1l": "研究對象", "home.meta2l": "分析架構",         "home.meta2v": "理論 · 證據 · 分析",
         "home.meta3l": "核心理論", "home.meta3v": "OLI、交易成本、進入模式",
         "home.meta4l": "指導教授",
         "takeaway.label": "結論摘要",
-        "vertical.eyebrow": "模組 1", "vertical.title": "垂直整合",
+        "vertical.eyebrow": "主題 1", "vertical.title": "垂直整合",
         "vertical.intro": "從國際策略看，台塑四寶把塑化鏈「內部化」：1301 位於中游聚合，約六成原料來自 6505 台塑化——這是內部市場，不是一般外部採購關係。",
         "vertical.researcher": "研究員：庭伃 Tina",
         "vertical.conceptTitle": "概念說明",
@@ -981,7 +1426,7 @@
         "vertical.vizTitle": "1301 產品矩陣",
         "vertical.analysisTitle": "分析重點",
         "vertical.takeaway": "結論：1301 的護城河來自集團內部化——在油價與中國低價傾銷下，內部供料與規模經濟仍是少數能維持議價與開工率的制度安排。",
-        "horizontal.eyebrow": "模組 2", "horizontal.title": "水平分工",
+        "horizontal.eyebrow": "主題 2", "horizontal.title": "水平分工",
         "horizontal.intro": "水平分工回答：同一條產業鏈，為何需要四家上市公司？麥寮以共享發電、管線、碼頭形成工業群聚，把固定成本攤薄，並以產品組合互補對沖景氣。",
         "horizontal.researcher": "研究員：泱慈 Julia",
         "horizontal.conceptTitle": "概念說明",
@@ -992,7 +1437,7 @@
         "horizontal.vizTitle": "分工說明（點選架構圖或卡片）",
         "horizontal.analysisTitle": "分析重點",
         "horizontal.takeaway": "結論：台塑的優勢不只是垂直整合，更是「整合＋分工」的雙層架構——這是難以被單廠複製的組織資產。",
-        "global.eyebrow": "模組 3", "global.title": "全球擴張",
+        "global.eyebrow": "主題 3", "global.title": "全球擴張",
         "global.intro": "全球擴張是 FDI 組合拳：台灣用技術尋求型合資補能力缺口；美國用資源尋求型綠地拿頁岩氣；中國用市場尋求型園區貼近內需，並以集團內部分工複製麥寮模式。",
         "global.researcher": "研究員：郁珊 Miranda",
         "global.conceptTitle": "概念說明",
@@ -1001,7 +1446,7 @@
         "global.vizTitle": "區域策略重點",
         "global.analysisTitle": "分析重點",
         "global.takeaway": "結論：台塑的國際化不是「到哪都蓋一樣的廠」，而是依 OLI 優勢差異，配置合資、併購與綠地等不同進入工具。",
-        "ma.eyebrow": "模組 4", "ma.title": "併購",
+        "ma.eyebrow": "主題 4", "ma.title": "併購",
         "ma.intro": "併購讓台塑快速取得東道國產能、客戶與執照；美國 1980 年代併購是海外立足關鍵，本土亦有同業整合案例。",
         "ma.researcher": "研究員：郁珊 Miranda",
         "ma.conceptTitle": "概念說明",
@@ -1011,7 +1456,7 @@
         "ma.vizTitle": "事件詳情",
         "ma.analysisTitle": "分析重點",
         "ma.takeaway": "結論：併購是「用錢買時間」的進入模式；台塑在美國先併購立足，再以綠地深化垂直整合，呈現階段性、可學習的國際化路徑。",
-        "gf.eyebrow": "模組 5", "gf.title": "綠地投資與策略聯盟",
+        "gf.eyebrow": "主題 5", "gf.title": "綠地投資與策略聯盟",
         "gf.intro": "綠地投資強調從零建廠、高度控制；策略聯盟則在技術、政治或財務風險較高時分攤資源。台塑兩者並用。",
         "gf.researcher": "研究員：馥瑄 Angela",
         "gf.conceptTitle": "概念說明",
@@ -1026,7 +1471,7 @@
         "gf.row2": "投入", "gf.row2a": "極高", "gf.row2b": "可分攤",
         "gf.row3": "情境", "gf.row3a": "美國石化", "gf.row3b": "越南鋼鐵",
         "gf.takeaway": "結論：進入模式是情境策略——核心石化、高控制需求→綠地；新領域、高制度風險→聯盟／合資分攤。",
-        "future.eyebrow": "模組 6", "future.title": "未來挑戰與建議",
+        "future.eyebrow": "主題 6", "future.title": "未來挑戰與建議",
         "future.intro": "台塑 1301 面臨碳費、能源轉型、亞洲產能過剩與貿易風險；2024 年首度全年虧損，需從碳治理與產品組合重整突圍。",
         "future.researcher": "研究員：承逸 Alex",
         "future.conceptTitle": "現況摘要",
@@ -1039,24 +1484,26 @@
         "future.vizTitle": "挑戰 vs. 建議（點選）",
         "future.analysisTitle": "對應策略",
         "future.takeaway": "結論：1301 已進入結構調整期——策略重點從「擴量」轉為「碳成本內生化、產品組合差異化、資本紀律與市場分散」。",
-        "footer.line": "SMMC-EMI 國際策略管理 · TP3 · 台塑 1301 · 指導教授 Prof. lolo",
+        "footer.line": "SMMC-EMI 國際策略管理 · G7 · TP3 · 台塑 1301 · 指導教授 Prof. lolo",
+        "footer.col1": "分析主題", "footer.col2": "策略工具", "footer.col3": "研究團隊",
+        "cta.title": "重思台塑的國際化路徑與轉型課題。", "cta.btn1": "從第一主題開始", "cta.btn2": "回到首頁",
         "voice.hint": "播放後，導覽員將依「目前頁面與您點選的圖表」講解",
-        "voice.idle": "按 ▶ 開始本頁導覽", "voice.playing": "導覽員說明中…", "voice.paused": "已暫停"
+        "voice.idle": "點擊播放鈕開始本頁導覽", "voice.playing": "導覽員說明中…", "voice.paused": "已暫停"
       },
       en: {
         "nav.home": "Home", "nav.vertical": "Vertical", "nav.horizontal": "Horizontal",
         "nav.global": "Global", "nav.ma": "M&A", "nav.greenfield": "Greenfield", "nav.future": "Future",
-        "home.eyebrow": "SMMC-EMI · International Strategy · TP3",
+        "home.eyebrow": "SMMC-EMI · International Strategy · G7 · TP3",
         "home.title1": "Formosa Plastics Corp.", "home.title2": "1301 Strategy Analysis",
-        "home.lead": "SMMC-EMI International Strategic Management, TP3: analyzing Formosa 1301 through theory–evidence–insight—covering integration, division, entry modes (JV/M&A/greenfield), and strategic renewal—not a corporate brochure.",
+        "home.lead": "SMMC-EMI International Strategic Management, G7 · TP3: analyzing Formosa 1301 through theory–evidence–insight—covering integration, division, entry modes (JV/M&A/greenfield), and strategic renewal—not a corporate brochure.",
         "lens.theory": "Theory", "lens.evidence": "Evidence", "lens.insight": "Our analysis",
         "home.cta1": "Start: Vertical Integration", "home.cta2": "Jump: Future Outlook",
-        "home.scrollHint": "Scroll down to read all six modules in order, or use the nav to jump",
+        "home.scrollHint": "Scroll down to read all six themes in order, or use the nav to jump",
         "home.meta1l": "Subject", "home.meta2l": "Framework",         "home.meta2v": "Theory · Evidence · Insight",
         "home.meta3l": "Core frameworks", "home.meta3v": "OLI, TCE, entry modes",
         "home.meta4l": "Advisor",
         "takeaway.label": "Key Takeaway",
-        "vertical.eyebrow": "Module 1", "vertical.title": "Vertical Integration",
+        "vertical.eyebrow": "Theme 1", "vertical.title": "Vertical Integration",
         "vertical.intro": "The Formosa four treasures integrate the petrochemical chain; 1301 sits in midstream polymers with heavy reliance on FPCC feedstock.",
         "vertical.researcher": "Researcher: Tina (Vertical)",
         "vertical.conceptTitle": "Concept",
@@ -1067,7 +1514,7 @@
         "vertical.vizTitle": "1301 product matrix",
         "vertical.analysisTitle": "Our analysis",
         "vertical.takeaway": "Over 60% of 1301 feedstock comes from FPCC—stable supply, cost edge, and cycle resilience underpin its PVC leadership.",
-        "horizontal.eyebrow": "Module 2", "horizontal.title": "Horizontal Division",
+        "horizontal.eyebrow": "Theme 2", "horizontal.title": "Horizontal Division",
         "horizontal.intro": "The four treasures cluster at Mailiao: distinct product lines, shared utilities and procurement, and portfolio complementarity.",
         "horizontal.researcher": "Researcher: Julia (Horizontal)",
         "horizontal.conceptTitle": "Concept",
@@ -1078,7 +1525,7 @@
         "horizontal.vizTitle": "Roles (click diagram or cards)",
         "horizontal.analysisTitle": "Our analysis",
         "horizontal.takeaway": "Mailiao clustering delivers both integration and specialization—a structural edge over smaller Taiwanese peers.",
-        "global.eyebrow": "Module 3", "global.title": "Global Expansion",
+        "global.eyebrow": "Theme 3", "global.title": "Global Expansion",
         "global.intro": "Expansion spans home-country JVs, U.S. M&A plus greenfield integration, and Ningbo greenfield with intra-group coordination.",
         "global.researcher": "Researcher: Miranda (Expansion)",
         "global.conceptTitle": "Concept",
@@ -1087,7 +1534,7 @@
         "global.vizTitle": "Regional strategy focus",
         "global.analysisTitle": "Our analysis",
         "global.takeaway": "Expansion matches regional advantage: Taiwan for tech, U.S. for resources, China for market proximity.",
-        "ma.eyebrow": "Module 4", "ma.title": "Mergers & Acquisitions",
+        "ma.eyebrow": "Theme 4", "ma.title": "Mergers & Acquisitions",
         "ma.intro": "M&A quickly secures capacity, customers, and permits—1980s U.S. deals were pivotal; domestic deals expanded PP share.",
         "ma.researcher": "Researcher: Miranda (M&A)",
         "ma.conceptTitle": "Concept",
@@ -1097,7 +1544,7 @@
         "ma.vizTitle": "Event details",
         "ma.analysisTitle": "Our analysis",
         "ma.takeaway": "M&A opened the U.S. door; greenfield later deepened vertical integration—a dual-track overseas model.",
-        "gf.eyebrow": "Module 5", "gf.title": "Greenfield & Alliances",
+        "gf.eyebrow": "Theme 5", "gf.title": "Greenfield & Alliances",
         "gf.intro": "Greenfield builds from scratch for control; alliances share tech and political risk. Formosa uses both.",
         "gf.researcher": "Researcher: Angela (Greenfield)",
         "gf.conceptTitle": "Concept",
@@ -1112,7 +1559,7 @@
         "gf.row2": "Investment", "gf.row2a": "Very high", "gf.row2b": "Shared",
         "gf.row3": "Use case", "gf.row3a": "U.S. petrochem", "gf.row3b": "Vietnam steel",
         "gf.takeaway": "Mailiao and Texas reflect scale/resource logic; academic and Vietnam JVs reflect risk-sharing.",
-        "future.eyebrow": "Module 6", "future.title": "Challenges & Recommendations",
+        "future.eyebrow": "Theme 6", "future.title": "Challenges & Recommendations",
         "future.intro": "1301 faces carbon fees, energy transition, Asian overcapacity, and trade risk—first annual loss in 2024 signals structural pressure.",
         "future.researcher": "Researcher: Alex (Future)",
         "future.conceptTitle": "Status snapshot",
@@ -1125,9 +1572,11 @@
         "future.vizTitle": "Challenge vs. response (click)",
         "future.analysisTitle": "Strategic response",
         "future.takeaway": "Prioritize carbon pricing, portfolio P&L, and supply resilience; accelerate green power and low-carbon products with strict capex gates.",
-        "footer.line": "SMMC-EMI International Strategy · TP3 · Formosa 1301 · Advisor Prof. lolo",
+        "footer.line": "SMMC-EMI International Strategy · G7 · TP3 · Formosa 1301 · Advisor Prof. lolo",
+        "footer.col1": "Themes", "footer.col2": "Strategy Tools", "footer.col3": "Research Team",
+        "cta.title": "Rethinking Formosa's internationalization and transition.", "cta.btn1": "Start from Theme 1", "cta.btn2": "Back to Home",
         "voice.hint": "Play to hear a guided tour of the current page and selected chart",
-        "voice.idle": "Press ▶ for this section", "voice.playing": "Guide speaking…", "voice.paused": "Paused"
+        "voice.idle": "Press Play for this section", "voice.playing": "Guide speaking…", "voice.paused": "Paused"
       }
     };
 
@@ -1280,9 +1729,9 @@
     ];
 
     const EXP_FLOW = [
-      { flag: "🇹🇼", modeZh: "技術尋求型合資", modeEn: "Tech-seeking JV", key: 0 },
-      { flag: "🇺🇸", modeZh: "併購 → 綠地垂直整合", modeEn: "M&A → greenfield", key: 1 },
-      { flag: "🇨🇳", modeZh: "獨資園區＋集團分工", modeEn: "Solo park + group split", key: 2 }
+      { icon: "home", modeZh: "技術尋求型合資", modeEn: "Tech-seeking JV", key: 0 },
+      { icon: "globe", modeZh: "併購 → 綠地垂直整合", modeEn: "M&A → greenfield", key: 1 },
+      { icon: "factory", modeZh: "獨資園區＋集團分工", modeEn: "Solo park + group split", key: 2 }
     ];
 
     const REGIONS = [
@@ -1330,8 +1779,8 @@
 
       if (currentView === "home") {
         return isZh
-          ? "各位好，我是這份 TP3 專題的語音導覽。我們的課程是 SMMC-EMI 國際策略管理，研究對象是台塑公司，股票代號 1301。請先看畫面左側標題與右側欄位：這個網站要練習的是「用策略管理的語言講一間公司的國際化」，不是背公司沿革。下方六張卡片，對應六個分析模組：垂直整合、水平分工、全球擴張、併購、綠地投資與策略聯盟，以及未來挑戰與建議。每一頁您都會看到三層架構：策略理論、實證資料、以及我們的分析結論。建議從垂直整合開始；進入模組後，可點流程圖上的節點，再按右下角播放，導覽會依您正在看的圖繼續說明。"
-          : "Welcome. This is the audio guide for our SMMC-EMI International Strategic Management TP3 project on Formosa Plastics, ticker 1301. The site trains you to explain internationalization with strategy language—not a corporate brochure. Six modules map to vertical integration, horizontal division, global expansion, M&A, greenfield and alliances, and future challenges. Each page uses theory, evidence, and our analysis. Start with vertical integration; click chart nodes, then press play for context-aware narration.";
+          ? "各位好，我是這份 G7 · TP3 專題的語音導覽。我們的課程是 SMMC-EMI 國際策略管理，研究對象是台塑公司，股票代號 1301。請先看畫面左側標題與右側欄位：這個網站要練習的是「用策略管理的語言講一間公司的國際化」，不是背公司沿革。下方六張卡片，對應六個分析主題：垂直整合、水平分工、全球擴張、併購、綠地投資與策略聯盟，以及未來挑戰與建議。每一頁您都會看到三層架構：策略理論、實證資料、以及我們的分析結論。建議從垂直整合開始；進入主題後，可點流程圖上的節點，再按右下角播放，導覽會依您正在看的圖繼續說明。"
+          : "Welcome. This is the audio guide for our SMMC-EMI International Strategic Management G7 · TP3 project on Formosa Plastics, ticker 1301. The site trains you to explain internationalization with strategy language—not a corporate brochure. Six themes map to vertical integration, horizontal division, global expansion, M&A, greenfield and alliances, and future challenges. Each page uses theory, evidence, and our analysis. Start with vertical integration; click chart nodes, then press play for context-aware narration.";
       }
 
       if (currentView === "vertical") {
@@ -1349,7 +1798,7 @@
         const orgName = isZh ? o.zh : o.en;
         return isZh
           ? `這一頁討論水平分工。請看架構圖正中央的圓形：麥寮六輕的共享設施，包括發電、管線與碼頭。四周是台塑四寶：台塑化、台塑、南亞、台化，各自負責不同產品組合，但共用基礎設施，這就是工業群聚。從策略理論看，這同時有規模經濟與投資組合分散景氣的效果。您目前選中「${orgName}」。${isZh ? o.analysisZh : o.analysisEn} 重點是：台塑不是只有垂直整合，還透過水平分工，把固定成本攤到四家法人，形成台灣小塑化廠難以複製的制度優勢。`
-          : `This module is horizontal division. The hub is shared power, pipelines, and port at Mailiao; the four treasures around it run different portfolios on the same infrastructure—industrial clustering. You selected ${orgName}. ${o.analysisEn} Formosa couples vertical integration with horizontal division to amortize fixed costs—a structural edge rivals cannot copy.`;
+          : `This theme is horizontal division. The hub is shared power, pipelines, and port at Mailiao; the four treasures around it run different portfolios on the same infrastructure—industrial clustering. You selected ${orgName}. ${o.analysisEn} Formosa couples vertical integration with horizontal division to amortize fixed costs—a structural edge rivals cannot copy.`;
       }
 
       if (currentView === "global") {
@@ -1358,7 +1807,7 @@
         const mode = EXP_FLOW[ctx.regionIdx];
         const modeText = isZh ? mode.modeZh : mode.modeEn;
         return isZh
-          ? `全球擴張模組。請看上方三個區塊的箭頭流程：台灣、美國、中國，代表不同的 FDI 邏輯。在 Dunning 的 OLI 框架下，台灣偏重 Ownership 與技術互補，以合資引進大金、德山等技術；美國偏重 Location 的資源優勢，先併購、再以綠地拿頁岩氣；中國偏重市場区位，以寧波獨資園區貼近內需，並複製集團內熱電與管線分工。您目前選的是「${region}」，模式是「${modeText}」。${isZh ? r.detailZh : r.detailEn} 請記住：國際化是依區位優勢選工具，不是全球同一套劇本。`
+          ? `全球擴張主題。請看上方三個區塊的箭頭流程：台灣、美國、中國，代表不同的 FDI 邏輯。在 Dunning 的 OLI 框架下，台灣偏重 Ownership 與技術互補，以合資引進大金、德山等技術；美國偏重 Location 的資源優勢，先併購、再以綠地拿頁岩氣；中國偏重市場区位，以寧波獨資園區貼近內需，並複製集團內熱電與管線分工。您目前選的是「${region}」，模式是「${modeText}」。${isZh ? r.detailZh : r.detailEn} 請記住：國際化是依區位優勢選工具，不是全球同一套劇本。`
           : `Global expansion. The three-step flow shows Taiwan, the U.S., and China—different FDI logics under OLI. Taiwan: tech-seeking JVs; U.S.: resources via M&A then shale greenfield; China: market-seeking Ningbo park with group utilities. You selected ${region}, mode ${modeText}. ${r.detailEn} Internationalization matches location advantages to entry tools—not one script worldwide.`;
       }
 
@@ -1366,8 +1815,8 @@
         const e = MA_EVENTS[ctx.maIdx];
         const title = isZh ? e.titleZh : e.titleEn;
         return isZh
-          ? `併購模組。畫面上方的流程，呈現台塑併購策略的三個階段：在美國立足、整合產能、再在台灣擴大單一產品線。併購在國際策略裡，是用資本換時間的進入模式。您目前選的事件是「${title}」。${isZh ? e.detailZh : e.detailEn} 1981 年特拉華 PVC 廠與 Stauffer 案，讓台塑取得美國產能、客戶與執照；其後再以綠地投資深化垂直整合。這是典型的漸進式國際化：先買進場券，再自建擴張。`
-          : `M&A module. The flow shows foothold, integration, and domestic scale-up. M&A buys speed with capital. Selected event: ${title}. ${e.detailEn} Delaware 1981 and Stauffer gave U.S. capacity and permits; greenfield later deepened integration—incremental internationalization.`;
+          ? `併購主題。畫面上方的流程，呈現台塑併購策略的三個階段：在美國立足、整合產能、再在台灣擴大單一產品線。併購在國際策略裡，是用資本換時間的進入模式。您目前選的事件是「${title}」。${isZh ? e.detailZh : e.detailEn} 1981 年特拉華 PVC 廠與 Stauffer 案，讓台塑取得美國產能、客戶與執照；其後再以綠地投資深化垂直整合。這是典型的漸進式國際化：先買進場券，再自建擴張。`
+          : `M&A theme. The flow shows foothold, integration, and domestic scale-up. M&A buys speed with capital. Selected event: ${title}. ${e.detailEn} Delaware 1981 and Stauffer gave U.S. capacity and permits; greenfield later deepened integration—incremental internationalization.`;
       }
 
       if (currentView === "greenfield") {
@@ -1417,6 +1866,7 @@
       renderChallenges();
       renderVerticalPoints();
       renderStrategyLens();
+      if (window.lucide) lucide.createIcons();
     }
 
     function renderStrategyLens() {
@@ -1522,6 +1972,23 @@
       update();
     }
 
+    function initFadeIn() {
+      const sections = [...document.querySelectorAll('.view:not(.view--home)')];
+      if (!sections.length || !('IntersectionObserver' in window)) {
+        sections.forEach(s => s.classList.add('is-visible'));
+        return;
+      }
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -60px 0px', threshold: 0.05 });
+      sections.forEach(s => obs.observe(s));
+    }
+
     function closeMenu() {
       document.getElementById("nav-links").classList.remove("is-open");
       document.getElementById("hamburger").classList.remove("is-open");
@@ -1560,7 +2027,7 @@
             <span>${isZh ? "輕油（石油腦）" : "Naphtha"}</span>
           </div>
         </div>
-        <div class="flow-arrow-down">↓</div>
+        <div class="flow-arrow-down"><i data-lucide="arrow-down"></i></div>
         <div class="flow-internal">
           <span class="flow-internal__badge">${badge}</span>
           <div class="flow-stack">
@@ -1604,6 +2071,7 @@
           if (window.speechSynthesis && window.speechSynthesis.speaking) speakCurrent();
         });
       });
+      if (window.lucide) lucide.createIcons();
     }
 
     function renderProductMatrix() {
@@ -1666,7 +2134,7 @@
         const arrow = i < EXP_FLOW.length - 1 ? '<span class="exp-arrow">→</span>' : "";
         return `
           <button type="button" class="exp-step ${i === regionIdx ? "is-active" : ""}" data-i="${s.key}">
-            <div class="flag">${s.flag}</div>
+            <div class="flag"><i data-lucide="${s.icon}"></i></div>
             <strong>${isZh ? r.labelZh : r.labelEn}</strong>
             <span>${isZh ? s.modeZh : s.modeEn}</span>
           </button>
@@ -1680,6 +2148,7 @@
           renderMap();
         });
       });
+      if (window.lucide) lucide.createIcons();
     }
 
     function renderMAFlow() {
@@ -1707,7 +2176,7 @@
       box.innerHTML = `
         <div class="decision-flow">
           <div class="decision-q">${t("gf.decisionQ")}</div>
-          <div class="flow-arrow-down">↓</div>
+          <div class="flow-arrow-down"><i data-lucide="arrow-down"></i></div>
           <div class="decision-branches">
             <div class="decision-branch ${gfMode === "greenfield" ? "is-active" : ""}" data-mode="greenfield">
               <strong>${t("gf.branchYes")}</strong>
@@ -1728,6 +2197,7 @@
           renderGF();
         });
       });
+      if (window.lucide) lucide.createIcons();
     }
 
     function renderFuturePriority() {
@@ -1864,11 +2334,28 @@
     function updateVoiceStatus(key) {
       document.getElementById("voice-status").textContent = t(key);
     }
+    function updatePlayButtonIcon(isPlaying) {
+      const btn = document.getElementById("voice-play");
+      if (btn) {
+        btn.innerHTML = isPlaying 
+          ? '<i data-lucide="pause"></i>' 
+          : '<i data-lucide="play"></i>';
+      }
+      const indicator = document.querySelector(".voice-bar__indicator");
+      if (indicator) {
+        indicator.classList.toggle("is-playing", isPlaying);
+      }
+      const voiceBar = document.getElementById("voice-bar");
+      if (voiceBar) {
+        voiceBar.classList.toggle("is-playing-audio", isPlaying);
+      }
+      if (window.lucide) lucide.createIcons();
+    }
     function stopSpeech() {
       window.speechSynthesis.cancel();
       utterance = null;
       speechPaused = false;
-      document.getElementById("voice-play").textContent = "▶";
+      updatePlayButtonIcon(false);
       updateVoiceStatus("voice.idle");
     }
     function speakCurrent() {
@@ -1880,7 +2367,7 @@
       utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = lang === "zh" ? "zh-TW" : "en-US";
       utterance.rate = parseFloat(document.getElementById("voice-rate").value);
-      utterance.onstart = () => { updateVoiceStatus("voice.playing"); document.getElementById("voice-play").textContent = "⏸"; };
+      utterance.onstart = () => { updateVoiceStatus("voice.playing"); updatePlayButtonIcon(true); };
       utterance.onend = () => { stopSpeech(); };
       utterance.onerror = () => stopSpeech();
       window.speechSynthesis.speak(utterance);
@@ -1891,14 +2378,14 @@
         window.speechSynthesis.pause();
         speechPaused = true;
         updateVoiceStatus("voice.paused");
-        document.getElementById("voice-play").textContent = "▶";
+        updatePlayButtonIcon(false);
         return;
       }
       if (speechPaused) {
         window.speechSynthesis.resume();
         speechPaused = false;
         updateVoiceStatus("voice.playing");
-        document.getElementById("voice-play").textContent = "⏸";
+        updatePlayButtonIcon(true);
         return;
       }
       speakCurrent();
@@ -1923,15 +2410,27 @@
       applyI18n();
     });
 
+    function updateThemeIcon() {
+      const btn = document.getElementById("theme-toggle");
+      if (!btn) return;
+      btn.innerHTML = theme === "dark" 
+        ? '<i data-lucide="sun"></i>' 
+        : '<i data-lucide="moon"></i>';
+      if (window.lucide) lucide.createIcons();
+    }
+
     const savedTheme = (() => { try { return localStorage.getItem("tp3-theme"); } catch (e) { return null; } })();
     if (savedTheme === "dark" || savedTheme === "light") {
       theme = savedTheme;
       document.documentElement.setAttribute("data-theme", theme);
     }
+    updateThemeIcon();
+
     document.getElementById("theme-toggle").addEventListener("click", () => {
       theme = theme === "dark" ? "light" : "dark";
       document.documentElement.setAttribute("data-theme", theme);
       try { localStorage.setItem("tp3-theme", theme); } catch (e) { /* ignore */ }
+      updateThemeIcon();
     });
 
     document.getElementById("hamburger").addEventListener("click", () => {
@@ -1944,11 +2443,23 @@
     document.getElementById("voice-stop").addEventListener("click", stopSpeech);
     document.getElementById("voice-prev").addEventListener("click", () => stepVoice(-1));
     document.getElementById("voice-next").addEventListener("click", () => stepVoice(1));
+    document.getElementById("voice-collapse-btn").addEventListener("click", () => {
+      document.getElementById("voice-bar").classList.add("is-collapsed");
+    });
+    document.getElementById("voice-expand-btn").addEventListener("click", () => {
+      document.getElementById("voice-bar").classList.remove("is-collapsed");
+    });
 
     applyI18n();
     initScrollSpy();
     initScrollProgress();
+    initFadeIn();
     updateVoiceStatusForSection("home");
+
+    /* CTA + footer link navigation */
+    document.querySelectorAll('.cta-banner [data-nav], footer [data-nav]').forEach(el => {
+      el.addEventListener('click', e => { e.preventDefault(); navigate(el.dataset.nav); });
+    });
 
     const hash = location.hash.replace("#", "");
     if (hash && viewOrder.includes(hash)) {
