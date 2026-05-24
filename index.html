@@ -1815,8 +1815,8 @@
 
       if (currentView === "home") {
         return isZh
-          ? "各位好，我是這份 G7 · TP3 專題的語音導覽。我們的課程是 SMMC-EMI 國際策略管理，研究對象是台塑公司，股票代號 1301。請先看畫面左側標題與右側欄位：這個網站要練習的是「用策略管理的語言講一間公司的國際化」，不是背公司沿革。下方六張卡片，對應六個分析主題：垂直整合、多角化轉型、全球擴張、併購、綠地投資與策略聯盟，以及未來挑戰與建議。每一頁您都會看到三層架構：策略理論、實證資料、以及我們的分析結論。建議從垂直整合開始；進入主題後，可點流程圖上的節點，再按右下角播放，導覽會依您正在看的圖繼續說明。"
-          : "Welcome. This is the audio guide for our SMMC-EMI International Strategic Management G7 · TP3 project on Formosa Plastics, ticker 1301. The site trains you to explain internationalization with strategy language—not a corporate brochure. Six themes map to vertical integration, concentric diversification, global expansion, M&A, greenfield and alliances, and future challenges. Each page uses theory, evidence, and environmental insight. Start with vertical integration; click chart nodes, then press play for context-aware narration.";
+          ? "各位好，我是這份 G7 · TP3 專題的語音導覽。我們的課程是 SMMC-EMI 國際策略管理，研究對象是台塑公司，股票代號 1301。請先看畫面左側標題與右側欄位：這個網站要練習的是「用策略管理的語言講一間公司的國際化」，不是背公司沿革。下方六張卡片，對應六個分析主題：垂直整合、多角化、全球擴張、併購、綠地投資與策略聯盟，以及未來挑戰與建議。每一頁您都會看到三層架構：策略理論、實證資料、以及我們的分析結論。建議從垂直整合開始；進入主題後，可點流程圖上的節點，再按右下角播放，導覽會依您正在看的圖繼續說明。"
+          : "Welcome. This is the audio guide for our SMMC-EMI International Strategic Management G7 · TP3 project on Formosa Plastics, ticker 1301. The site trains you to explain internationalization with strategy language—not a corporate brochure. Six themes map to vertical integration, diversification, global expansion, M&A, greenfield and alliances, and future challenges. Each page uses theory, evidence, and environmental insight. Start with vertical integration; click chart nodes, then press play for context-aware narration.";
       }
 
       if (currentView === "vertical") {
@@ -1833,8 +1833,8 @@
         const o = ORG[ctx.orgIdx];
         const orgName = isZh ? o.zh : o.en;
         return isZh
-          ? `這一頁討論多角化轉型策略。請看架構圖正中央的圓形：台塑 1301 核心技術，即高分子材料與化學合成。四周是轉型原因背景以及三大行動：半導體材料、新能源儲能、與特種碳纖維。台塑在面對外部石化產能過剩與低碳減碳浪潮時，選擇了「集中多角化」路徑。您目前選中「${orgName}」。${isZh ? o.analysisZh : o.analysisEn} 重點是：台塑的轉型策略不偏離其核心技術，而是運用國際合資、資源重配置展現動態能力，開闢高產值的第二成長曲線。`
-          : `This section discusses related diversification strategy. The hub represents FPC's core chemical synthesis and polymer capabilities. Around it are the drivers and three key actions: semiconductor materials, energy storage, and carbon fiber. Selected: ${orgName}. ${o.analysisEn} FPC leverages its core technologies to build a second growth curve via international joint ventures and dynamic capabilities.`;
+          ? `這一頁討論多角化策略。請看架構圖正中央的圓形：台塑 1301 核心技術，即高分子材料與化學合成。四周是轉型原因背景以及三大行動：半導體材料、新能源儲能、與特種碳纖維。台塑在面對外部石化產能過剩與低碳減碳浪潮時，選擇了「集中多角化」路徑。您目前選中「${orgName}」。${isZh ? o.analysisZh : o.analysisEn} 結論是：台塑的轉型並非盲目跨界，而是將既有核心技術轉化為高附加價值產品，在綠色經濟時代重塑全球競爭優勢。`
+          : `This section discusses concentric diversification strategy. The hub represents FPC's core chemical synthesis and polymer capabilities. Around it are the drivers and three key actions: semiconductor materials, energy storage, and carbon fiber. Selected: ${orgName}. ${o.analysisEn} Takeaway: FPC's diversification is not random but related, transforming core chemical capabilities into high-value clean-tech assets to secure advantages in the green era.`;
       }
 
       if (currentView === "global") {
