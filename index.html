@@ -1034,6 +1034,46 @@
       .module-diagram { padding: 16px; }
       .compare-table th, .compare-table td { padding: 8px 10px; font-size: 13px; }
     }
+
+    /* Future detail custom styling - fully aligned with DESIGN.md */
+    .future-detail-box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .future-detail-section {
+      background: var(--cream-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 14px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .future-detail-section--bg {
+      border-left: 3px solid var(--accent-2);
+    }
+    .future-detail-section--rec {
+      border-left: 3px solid var(--primary);
+    }
+    .future-detail-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .future-detail-section--bg .future-detail-label {
+      color: var(--accent-2);
+    }
+    .future-detail-section--rec .future-detail-label {
+      color: var(--primary);
+    }
+    .future-detail-content {
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.55;
+    }
   </style>
 </head>
 <body>
@@ -1795,10 +1835,38 @@
     ];
 
     const CHALLENGES = [
-      { challengeZh: "碳費／減碳", challengeEn: "Carbon compliance", recZh: "導入內部碳價、產品別碳損益表，衝刺 2025 減排 20% 目標。", recEn: "Internal carbon price and product carbon P&L; hit 20% reduction target." },
-      { challengeZh: "能源轉型", challengeEn: "Energy transition", recZh: "煤轉氣、綠電 PPA、太陽能／陸風，降低蒸汽單耗。", recEn: "Coal-to-gas, green PPAs, renewables to cut energy intensity." },
-      { challengeZh: "產能過剩", challengeEn: "Overcapacity", recZh: "產品／地區損益白名單，檢討長虧線，發展差異化與低碳品項。", recEn: "P&L whitelist by product/region; exit chronic loss lines; differentiate." },
-      { challengeZh: "貿易／CBAM", challengeEn: "Trade & CBAM", recZh: "區域合規中心、分散市場、強化 CBAM 碳資料與客戶認證。", recEn: "Regional compliance hub, market diversification, CBAM-ready data." }
+      {
+        challengeZh: "碳費與能源轉型",
+        challengeEn: "Carbon & Energy Shift",
+        detailZh: "台塑 2024 年碳排放較 2020 年僅減 12.6%，未達 2025 年減 20% 的短期目標；且面臨台灣碳費啟動（一般費率 300 元，優惠 50/100 元）的成本壓力。此外，工安職災事故亦拉高社會許可成本。",
+        detailEn: "FPC's 2024 emissions fell only 12.6% vs 2020, missing the 2025 -20% target. FPC faces cost pressures from Taiwan's carbon fee (up to NT$300/t) and safety risks from occupational injuries.",
+        recZh: "優先級 A；0-12 個月內導入內部碳價與產品別碳損益表，加速仁武與林園廠煤轉氣鍋爐、綠電 PPA 及 AI 智慧電廠建置。KPI 為 2027 前較 2020 減碳 20%、優惠費率覆蓋率 >80%。",
+        recEn: "Priority A; Implement internal carbon pricing and product carbon P&Ls. Accelerate coal-to-gas, green PPAs, and AI plant deployment (NT$1.15bn capex in 2025). Target -20% vs 2020 by 2027."
+      },
+      {
+        challengeZh: "原料韌性與低碳產品",
+        challengeEn: "Feedstock & Green Demand",
+        detailZh: "外銷高達 72%，極易受全球原料與運費波動干擾。同時，國際大廠與環保法規（如歐盟包裝回收新法）對低碳及再生產品要求升高。台塑雖已完成 82 項碳足跡，但綠色產品比率仍待提升。",
+        detailEn: "Exports account for 72%, highly vulnerable to supply and freight shocks. Global demand shifts to bio/recycled products (e.g., EU 2030 packaging directive). FPC completed 82 carbon footprints but needs higher green share.",
+        recZh: "優先級 A；0-18 個月建立關鍵原料雙來源、安全庫存與 S&OP 機制。將 PVC/PE/PP/EVA 劃分為傳統、差異化與低碳三線，加速綠色商業化。KPI 為單一來源依賴 <40%、OTIF >95%。",
+        recEn: "Priority A; Build dual-sourcing & 90-day safety stocks. Segment PVC/PE/PP/EVA into commodity, specialty, and low-carbon lines. Target single-source reliance <40%, OTIF >95%."
+      },
+      {
+        challengeZh: "產能競爭與損益重整",
+        challengeEn: "Overcapacity & P&L Reset",
+        detailZh: "面對中國大陸大宗塑化產能擴建、低價傾銷與 ECFA 優惠中止，台塑 2024 年面臨成立以來首度全年虧損，2025Q2 稅前虧損更擴至 68.71 億。而 1-Hexene 與碳纖等擴大案亦面臨大額資本支出考驗。",
+        detailEn: "Massive overcapacity in China, price dumping, and suspended ECFA tariff cuts led to FPC's first annual pre-tax loss in 2024 (2025Q2 loss widened to NT$6.87bn) and massive capex funding pressure.",
+        recZh: "優先級 A；即刻建立產品與地區別損益白名單，檢討長期虧損產線。設定三道嚴格資本支出門檻：IRR > WACC + 3%、評估財務模型納入碳價情境、且新建專案必須有非中國之增量客戶。",
+        recEn: "Priority A; Set up a product-region P&L whitelist to review chronic loss lines. Enforce strict capex gates: require IRR > WACC + 3%, model carbon costs, and secure non-China incremental clients."
+      },
+      {
+        challengeZh: "貿易風險與數位升級",
+        challengeEn: "Trade Risks & Smart Mfg",
+        detailZh: "外銷地廣泛，極易受地緣政治與關稅干擾；歐盟 CBAM 進入正式期，要求進口商申報內含排放。內部 AI 案年效益雖達 8.3 億，但專案仍偏零散且難以平台化，且 OT/IT 資安防護有待升級以防停工。",
+        detailEn: "Global sales exposed to geopolitical and tariff shifts; EU CBAM enters formal phase. FPC's AI cases yield NT$830m/yr but are fragmented. OT/IT security needs upgrading to prevent operational shutdowns.",
+        recZh: "優先級 B；0-18 個月內設立區域合規與定價中心，開發非中國市場。將 AI 專案集中收斂至能管、品質預測、預知保養與工安巡檢四大場景，並建置工業控制 OT 資安監控中心（SOC）。",
+        recEn: "Priority B; Establish regional compliance and pricing hubs to diversify markets. Consolidate AI into utility management, quality prediction, predictive maintenance, and patrol, and build an OT SOC."
+      }
     ];
 
     let lang = "zh";
@@ -1869,10 +1937,9 @@
       if (currentView === "future") {
         const c = CHALLENGES[ctx.chIdx];
         const challenge = isZh ? c.challengeZh : c.challengeEn;
-        const rec = isZh ? c.recZh : c.recEn;
         return isZh
-          ? `最後是未來挑戰與建議。請先看左欄數據：2024 年首度全年虧損、外銷占七成二、減碳進度落後目標——這表示 1301 已進入結構調整期，不是單純景氣循環。中間的優先序架構，區分短期 A 與中期 B：碳治理、損益重整、原料韌性優先；ESG 透明、AI 平台、貿易合規其次。您點選的議題是「${challenge}」。我們的建議是：${rec} 從理論看，這是制度壓力加上動態能力：企業必須把碳成本內生化，並用集中多角化——半導體特化、儲能、碳纖維——在維持化工核心的同時，開第二成長曲線。`
-          : `Future challenges. Left column: first annual loss in 2024, seventy-two percent exports, slow decarbonization—structural, not cyclical. Priority A covers carbon governance, P&L reset, supply resilience; B covers ESG transparency, AI, trade compliance. Selected issue: ${challenge}. Recommendation: ${rec} Institutional pressures plus dynamic capabilities require internal carbon pricing and related diversification for a second growth curve.`;
+          ? `最後是未來挑戰與建議。請先看左欄數據：2024 年首度全年虧損、外銷占七成二、減碳進度落後目標——這表示 1301 已進入結構調整期，不是單純景氣循環。您點選的議題是「${challenge}」。這個挑戰的背景是：${c.detailZh}。針對這點，我們的具體建議是：${c.recZh}。從策略管理理論看，這反映了制度壓力與動態能力，台塑必須將碳成本內生化，並在維持核心化工的同時，以集中多角化開啟第二成長曲線。`
+          : `Lastly, future challenges and recommendations. Left column: FPC posted its first annual loss in 2024 with 72% exports and lagged carbon reduction—indicating a structural shift. Selected issue: "${challenge}". Background: ${c.detailEn} Our specific recommendation: ${c.recEn} From strategic theory, this reflects institutional pressure and dynamic capabilities. FPC must internalize carbon costs, review its P&L, and deploy related diversification for a second curve.`;
       }
 
       return "";
@@ -1972,6 +2039,49 @@
     function navigate(viewId) {
       stopSpeech();
       scrollToSection(viewId, { updateHash: true });
+    }
+
+    let chIdx = 0;
+    function renderChallenges() {
+      const box = document.getElementById("challenge-list");
+      const detail = document.getElementById("future-detail");
+      box.innerHTML = CHALLENGES.map((c, i) => {
+        const desc = lang === "zh" ? c.recZh : c.recEn;
+        const truncated = desc.length > 25 ? desc.substring(0, 24) + "..." : desc;
+        return `
+          <div class="challenge-item ${i === chIdx ? "is-active" : ""}" data-i="${i}">
+            <b>${lang === "zh" ? c.challengeZh : c.challengeEn}</b>
+            <span>${truncated}</span>
+          </div>
+        `;
+      }).join("");
+      const c = CHALLENGES[chIdx];
+      
+      const titleBackground = lang === "zh" ? "【背景與影響】" : "[Background & Impact]";
+      const titleRecommendation = lang === "zh" ? "【具體建議與策略】" : "[Recommendation & Strategy]";
+      
+      detail.innerHTML = `
+        <div class="future-detail-box">
+          <div class="future-detail-section future-detail-section--bg">
+            <strong class="future-detail-label">${titleBackground}</strong>
+            <div class="future-detail-content">${lang === "zh" ? c.detailZh : c.detailEn}</div>
+          </div>
+          <div class="future-detail-section future-detail-section--rec">
+            <strong class="future-detail-label">${titleRecommendation}</strong>
+            <div class="future-detail-content" style="font-weight: 500;">${lang === "zh" ? c.recZh : c.recEn}</div>
+          </div>
+        </div>
+      `;
+
+      box.querySelectorAll(".challenge-item").forEach(el => {
+        el.addEventListener("click", () => {
+          chIdx = +el.dataset.i;
+          futurePri = chIdx; // 4個挑戰對應4個優先序項目
+          renderChallenges();
+          renderFuturePriority();
+          if (window.speechSynthesis && window.speechSynthesis.speaking) speakCurrent(true);
+        });
+      });
     }
 
     function initScrollSpy() {
@@ -2104,7 +2214,7 @@
           renderVerticalFlow();
           renderOrg();
           renderHorizontalArch();
-          if (window.speechSynthesis && window.speechSynthesis.speaking) speakCurrent();
+          if (window.speechSynthesis && window.speechSynthesis.speaking) speakCurrent(true);
         });
       });
       if (window.lucide) lucide.createIcons();
@@ -2122,7 +2232,7 @@
       nodes.querySelectorAll("[data-pi]").forEach(el => el.addEventListener("click", () => {
         productIdx = +el.dataset.pi;
         renderProductMatrix();
-        if (window.speechSynthesis && window.speechSynthesis.speaking) speakCurrent();
+        if (window.speechSynthesis && window.speechSynthesis.speaking) speakCurrent(true);
       }));
     }
 
@@ -2157,6 +2267,7 @@
           renderHorizontalArch();
           renderOrg();
           renderVerticalFlow();
+          if (window.speechSynthesis && window.speechSynthesis.speaking) speakCurrent(true);
         });
       });
     }
@@ -2202,6 +2313,7 @@
           maIdx = +btn.dataset.i;
           renderMAFlow();
           renderMA();
+          if (window.speechSynthesis && window.speechSynthesis.speaking) speakCurrent(true);
         });
       });
     }
@@ -2231,6 +2343,7 @@
           gfIdx = gfMode === "greenfield" ? 0 : 3;
           renderGFDecision();
           renderGF();
+          if (window.speechSynthesis && window.speechSynthesis.speaking) speakCurrent(true);
         });
       });
       if (window.lucide) lucide.createIcons();
@@ -2239,11 +2352,15 @@
     function renderFuturePriority() {
       const box = document.getElementById("future-priority-diagram");
       if (!box) return;
+      
+      const isZh = lang === "zh";
       const rows = [
-        { badge: "A", cls: "a", title: t("future.priA"), sub: t("future.priASub"), idx: 0 },
-        { badge: "A", cls: "a", title: lang === "zh" ? "能源／原料韌性" : "Energy & supply", sub: lang === "zh" ? "煤轉氣、雙來源、安全庫存" : "Coal-to-gas, dual sourcing", idx: 1 },
-        { badge: "B", cls: "b", title: t("future.priB"), sub: t("future.priBSub"), idx: 2 }
+        { badge: "A", cls: "a", title: isZh ? "優先 A：碳費與能源轉型" : "Priority A: Carbon & Energy", sub: isZh ? "內部碳價、煤轉氣鍋爐與綠電 PPA" : "Internal carbon price, gas boilers, green PPAs", idx: 0 },
+        { badge: "A", cls: "a", title: isZh ? "優先 A：原料韌性與低碳產品" : "Priority A: Feedstock & Green", sub: isZh ? "原料雙來源、安全庫存、產品三線分流" : "Dual sourcing, safety stock, 3 product lines", idx: 1 },
+        { badge: "A", cls: "a", title: isZh ? "優先 A：產能競爭與損益重整" : "Priority A: P&L Reset & Capex", sub: isZh ? "損益白名單、去瓶頸檢討、嚴格 Capex Gate" : "P&L whitelist, strict capex gate (IRR>WACC+3%)", idx: 2 },
+        { badge: "B", cls: "b", title: isZh ? "優先 B：貿易風險與數位升級" : "Priority B: Trade & Smart Mfg", sub: isZh ? "區域合規中心、AI 四大場景平台化與 OT SOC" : "Compliance hub, 4 AI use cases, OT SOC", idx: 3 }
       ];
+      
       box.innerHTML = rows.map(r => `
         <div class="priority-row ${chIdx === r.idx ? "is-active" : ""}" data-fi="${r.idx}">
           <span class="priority-badge priority-badge--${r.cls}">${r.badge}</span>
@@ -2256,6 +2373,7 @@
           chIdx = futurePri;
           renderFuturePriority();
           renderChallenges();
+          if (window.speechSynthesis && window.speechSynthesis.speaking) speakCurrent(true);
         });
       });
     }
@@ -2283,6 +2401,7 @@
         renderOrg();
         renderHorizontalArch();
         renderVerticalFlow();
+        if (window.speechSynthesis && window.speechSynthesis.speaking) speakCurrent(true);
       }));
     }
 
@@ -2303,6 +2422,7 @@
         regionIdx = +el.dataset.i;
         renderMap();
         renderGlobalExpFlow();
+        if (window.speechSynthesis && window.speechSynthesis.speaking) speakCurrent(true);
       }));
     }
 
@@ -2321,6 +2441,7 @@
         maIdx = +btn.dataset.i;
         renderMA();
         renderMAFlow();
+        if (window.speechSynthesis && window.speechSynthesis.speaking) speakCurrent(true);
       }));
     }
 
@@ -2339,28 +2460,11 @@
       box.querySelectorAll(".gf-card").forEach(el => el.addEventListener("click", () => {
         gfIdx = +el.dataset.i;
         renderGF();
+        if (window.speechSynthesis && window.speechSynthesis.speaking) speakCurrent(true);
       }));
     }
 
-    let chIdx = 0;
-    function renderChallenges() {
-      const box = document.getElementById("challenge-list");
-      const detail = document.getElementById("future-detail");
-      box.innerHTML = CHALLENGES.map((c, i) => `
-        <div class="challenge-item ${i === chIdx ? "is-active" : ""}" data-i="${i}">
-          <b>${lang === "zh" ? c.challengeZh : c.challengeEn}</b>
-          <span>${lang === "zh" ? c.recZh : c.recEn}</span>
-        </div>
-      `).join("");
-      const c = CHALLENGES[chIdx];
-      detail.textContent = lang === "zh" ? c.recZh : c.recEn;
-      box.querySelectorAll(".challenge-item").forEach(el => el.addEventListener("click", () => {
-        chIdx = +el.dataset.i;
-        futurePri = chIdx < 2 ? 0 : 2;
-        renderChallenges();
-        renderFuturePriority();
-      }));
-    }
+
 
     // Speech
     let utterance = null;
@@ -2394,12 +2498,48 @@
       updatePlayButtonIcon(false);
       updateVoiceStatus("voice.idle");
     }
-    function speakCurrent() {
+    function getSelectedName() {
+      const isZh = lang === "zh";
+      if (currentView === "vertical") {
+        const n = VERTICAL_FLOW[verticalIdx];
+        return isZh ? n.nameZh : n.nameEn;
+      }
+      if (currentView === "horizontal") {
+        const o = ORG[orgIdx];
+        return isZh ? o.zh : o.en;
+      }
+      if (currentView === "global") {
+        const r = REGIONS[regionIdx];
+        return isZh ? r.labelZh : r.labelEn;
+      }
+      if (currentView === "ma") {
+        const e = MA_EVENTS[maIdx];
+        return isZh ? e.titleZh : e.titleEn;
+      }
+      if (currentView === "greenfield") {
+        const g = GF_PROJECTS[gfIdx];
+        return isZh ? g.titleZh : g.titleEn;
+      }
+      if (currentView === "future") {
+        const c = CHALLENGES[chIdx];
+        return isZh ? c.challengeZh : c.challengeEn;
+      }
+      return "";
+    }
+
+    function speakCurrent(interrupted = false) {
       window.speechSynthesis.cancel();
       utterance = null;
       speechPaused = false;
-      const text = getVoiceText();
+      let text = getVoiceText();
       if (!text) return;
+      if (interrupted) {
+        const name = getSelectedName();
+        if (name) {
+          const prefix = lang === "zh" ? `已選擇「${name}」。` : `Selected: ${name}. `;
+          text = prefix + text;
+        }
+      }
       utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = lang === "zh" ? "zh-TW" : "en-US";
       utterance.rate = parseFloat(document.getElementById("voice-rate").value);
